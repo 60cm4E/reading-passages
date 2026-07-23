@@ -156,47 +156,113 @@
     transform: scale(0.95);
   }
 
-  /* ── Legend ── */
+  /* ── Legend (Sticky + Collapsible) ── */
   .legend {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 24px 28px;
+    padding: 0;
     margin-bottom: 30px;
     box-shadow: var(--shadow-sm);
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: sticky;
+    top: 8px;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
-  .legend h2 {
-    font-size: 1.1em;
-    margin-bottom: 16px;
+  .legend.is-stuck {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    border-color: var(--accent);
+  }
+  .legend-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    cursor: default;
+    user-select: none;
+  }
+  .legend-header h2 {
+    font-size: 1em;
+    margin: 0;
     color: var(--text);
     display: flex;
     align-items: center;
     gap: 8px;
   }
+  .legend-header .legend-hint {
+    font-size: 0.78em;
+    color: var(--text-light);
+    opacity: 0.7;
+  }
+  .legend-body {
+    padding: 0 20px 16px;
+  }
+  .legend-body details {
+    border-top: 1px solid var(--border);
+    padding: 0;
+  }
+  .legend-body details + details {
+    border-top: 1px solid var(--border);
+  }
+  .legend-body summary {
+    padding: 10px 4px;
+    font-size: 0.92em;
+    font-weight: 700;
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+  }
+  .legend-body summary:hover {
+    color: var(--accent);
+  }
+  .legend-body summary::before {
+    content: '▸';
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 0.8em;
+    color: var(--accent);
+  }
+  .legend-body details[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .legend-body summary::-webkit-details-marker { display: none; }
+  .legend-body .legend-grid-wrap {
+    padding: 6px 0 12px 18px;
+    animation: legendSlideIn 0.2s ease;
+  }
+  @keyframes legendSlideIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
   .legend-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 10px 16px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 6px 14px;
   }
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.9em;
-    padding: 6px 0;
+    gap: 8px;
+    font-size: 0.85em;
+    padding: 4px 0;
   }
   .legend-preview {
     display: inline-block;
-    padding: 3px 10px;
-    border-radius: 6px;
+    padding: 2px 8px;
+    border-radius: 5px;
     font-weight: 600;
-    font-size: 0.92em;
+    font-size: 0.88em;
     white-space: nowrap;
   }
   .legend-desc {
     color: var(--text-light);
-    font-size: 0.88em;
+    font-size: 0.84em;
   }
 
   /* ── Sentence Card ── */
@@ -715,29 +781,40 @@
 <button class="menu-toggle" id="menuToggle" title="목차 열기" aria-label="메뉴 열기">☰</button>
 
 <main>
-<section class="legend">
-  <h2><span>📌</span> 문장 성분 분석 기호 (계층형)</h2>
-  <h3 class="section-title" style="font-size:0.95em; margin:0 0 10px;">1. 핵심 성분 (Core Elements) — 문장의 뼈대</h3>
-  <div class="legend-grid">
-    <div class="legend-item"><span class="legend-preview c-s">주어 (S)</span> <span class="legend-desc">~은/는/이/가</span></div>
-    <div class="legend-item"><span class="legend-preview c-v">동사 (V)</span> <span class="legend-desc">~하다, ~이다</span></div>
-    <div class="legend-item"><span class="legend-preview c-o">목적어 (O)</span> <span class="legend-desc">~을/를</span></div>
-    <div class="legend-item"><span class="legend-preview c-c">보어 (C)</span> <span class="legend-desc">상태/정체 설명</span></div>
-    <div class="legend-item"><span class="legend-preview c-io">간접목적어 (IO)</span> <span class="legend-desc">~에게</span></div>
-    <div class="legend-item"><span class="legend-preview c-do">직접목적어 (DO)</span> <span class="legend-desc">~을/를 (4형식)</span></div>
-    <div class="legend-item"><span class="legend-preview c-oc">목적격보어 (OC)</span> <span class="legend-desc">목적어 = OC</span></div>
+<section class="legend" id="legendPanel">
+  <div class="legend-header">
+    <h2><span>📌</span> 문장 성분 분석 기호</h2>
+    <span class="legend-hint">▼ 클릭하여 펼치기/접기</span>
   </div>
-  <h3 class="section-title" style="font-size:0.95em; margin:18px 0 10px;">2. 수식 성분 (Modifiers) — 문장을 풍성하게</h3>
-  <div class="legend-grid">
-    <div class="legend-item"><span class="legend-preview m-adj-c">[형용사절]</span> <span class="legend-desc">명사 수식 (관계사절)</span></div>
-    <div class="legend-item"><span class="legend-preview m-adj-p">[형용사구]</span> <span class="legend-desc">명사 수식 (분사구, 전치사구)</span></div>
-    <div class="legend-item"><span class="legend-preview m-adv-c">&lt;부사절&gt;</span> <span class="legend-desc">동사/문장 수식 (when, while 등)</span></div>
-    <div class="legend-item"><span class="legend-preview m-adv-p">&lt;부사구&gt;</span> <span class="legend-desc">동사/문장 수식 (전치사구, to부정사)</span></div>
-    <div class="legend-item"><span class="legend-preview m-part">(분사구문)</span> <span class="legend-desc">주절 수식 (~하면서, ~하여)</span></div>
-    <div class="legend-item"><span class="legend-preview m-appos">=동격=</span> <span class="legend-desc">앞 명사 부연 설명</span></div>
-  </div>
-  <div class="legend-grid" style="margin-top:12px;">
-    <div class="legend-item"><span class="legend-preview conj">접속사</span> <span class="legend-desc">and, but, or, that 등</span></div>
+  <div class="legend-body">
+    <details open>
+      <summary>1. 핵심 성분 (Core) — 문장의 뼈대</summary>
+      <div class="legend-grid-wrap">
+        <div class="legend-grid">
+          <div class="legend-item"><span class="legend-preview c-s">주어 (S)</span> <span class="legend-desc">~은/는/이/가</span></div>
+          <div class="legend-item"><span class="legend-preview c-v">동사 (V)</span> <span class="legend-desc">~하다, ~이다</span></div>
+          <div class="legend-item"><span class="legend-preview c-o">목적어 (O)</span> <span class="legend-desc">~을/를</span></div>
+          <div class="legend-item"><span class="legend-preview c-c">보어 (C)</span> <span class="legend-desc">상태/정체 설명</span></div>
+          <div class="legend-item"><span class="legend-preview c-io">간접목적어 (IO)</span> <span class="legend-desc">~에게</span></div>
+          <div class="legend-item"><span class="legend-preview c-do">직접목적어 (DO)</span> <span class="legend-desc">~을/를 (4형식)</span></div>
+          <div class="legend-item"><span class="legend-preview c-oc">목적격보어 (OC)</span> <span class="legend-desc">목적어 = OC</span></div>
+        </div>
+      </div>
+    </details>
+    <details open>
+      <summary>2. 수식 성분 (Modifiers) — 문장을 풍성하게</summary>
+      <div class="legend-grid-wrap">
+        <div class="legend-grid">
+          <div class="legend-item"><span class="legend-preview m-adj-c">[형용사절]</span> <span class="legend-desc">명사 수식 (관계사절)</span></div>
+          <div class="legend-item"><span class="legend-preview m-adj-p">[형용사구]</span> <span class="legend-desc">명사 수식 (분사구, 전치사구)</span></div>
+          <div class="legend-item"><span class="legend-preview m-adv-c">&lt;부사절&gt;</span> <span class="legend-desc">동사/문장 수식 (when, while 등)</span></div>
+          <div class="legend-item"><span class="legend-preview m-adv-p">&lt;부사구&gt;</span> <span class="legend-desc">동사/문장 수식 (전치사구, to부정사)</span></div>
+          <div class="legend-item"><span class="legend-preview m-part">(분사구문)</span> <span class="legend-desc">주절 수식 (~하면서, ~하여)</span></div>
+          <div class="legend-item"><span class="legend-preview m-appos">=동격=</span> <span class="legend-desc">앞 명사 부연 설명</span></div>
+          <div class="legend-item"><span class="legend-preview conj">접속사</span> <span class="legend-desc">and, but, or, that 등</span></div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -2607,6 +2684,18 @@
     table.parentNode.insertBefore(wrapper, table);
     wrapper.appendChild(table);
   });
+  // ── Legend Sticky Detection ──
+  var legend = document.getElementById('legendPanel');
+  if (legend) {
+    var sentinel = document.createElement('div');
+    sentinel.style.height = '1px';
+    sentinel.style.pointerEvents = 'none';
+    legend.parentNode.insertBefore(sentinel, legend);
+    var obs = new IntersectionObserver(function(entries) {
+      legend.classList.toggle('is-stuck', !entries[0].isIntersecting);
+    }, { threshold: [0] });
+    obs.observe(sentinel);
+  }
 })();
 </script>
 
