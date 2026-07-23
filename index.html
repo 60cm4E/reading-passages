@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>영어 독해 구조 분석 해설지 (21~36번)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  /* ═══════ LIGHT MODE COLOR SET ═══════ */
+  :root, [data-theme="light"] {
+    --s-text: #1d4ed8;   --s-bg: #dbeafe;
+    --v-text: #b91c1c;   --v-bg: #fee2e2;
+    --o-text: #047857;   --o-bg: #d1fae5;
+    --c-text: #7e22ce;   --c-bg: #f3e8ff;
+    --m-text: #b45309;   --m-bg: #fef3c7;
+    --conj-text: #475569; --conj-bg: #f1f5f9;
+
+    /* ── Hierarchical Core Colors ── */
+    --io-text: #0f766e;  --io-bg: #ccfbf1;     /* IO: Teal */
+    --do-text: #15803d;  --do-bg: #bbf7d0;     /* DO: Bright Green */
+    --oc-text: #4338ca;  --oc-bg: #e0e7ff;     /* OC: Indigo */
+
+    /* ── Modifier Colors ── */
+    --mod-adj: #d97706;       /* Orange for adjective modifiers */
+    --mod-adv: #be185d;       /* Pink for adverb modifiers */
+    --mod-part: #0369a1;      /* Sky Blue for participial */
+    --mod-appos-bg: #f1f5f9;  /* Light gray for appositives */
+
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --card-inner: #f1f5f9;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+    --accent: #3b82f6;
+    --accent-light: #eff6ff;
+    --accent-border: #bfdbfe;
+    --translation-bg: #fefce8;
+    --translation-border: #eab308;
+    --tip-bg: #f0fdf4;
+    --tip-border: #bbf7d0;
+    --tip-text: #16a34a;
+    --warn-bg: #fef3c7;
+    --warn-border: #fde68a;
+    --warn-text: #d97706;
+    --table-stripe: #f8fafc;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 2px 12px rgba(0,0,0,0.04);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-header: 0 8px 32px rgba(37, 99, 235, 0.3);
+  }
+
+  /* ═══════ DARK MODE COLOR SET ═══════ */
+  [data-theme="dark"] {
+    --s-text: #93c5fd;   --s-bg: rgba(37,99,235,0.2);
+    --v-text: #fca5a5;   --v-bg: rgba(239,68,68,0.18);
+    --o-text: #6ee7b7;   --o-bg: rgba(16,185,129,0.18);
+    --c-text: #d8b4fe;   --c-bg: rgba(168,85,247,0.18);
+    --m-text: #fcd34d;   --m-bg: rgba(245,158,11,0.18);
+    --conj-text: #94a3b8; --conj-bg: rgba(100,116,139,0.15);
+
+    --io-text: #5eead4;  --io-bg: rgba(20,184,166,0.25);
+    --do-text: #86efac;  --do-bg: rgba(74,222,128,0.25);
+    --oc-text: #a5b4fc;  --oc-bg: rgba(99,102,241,0.25);
+
+    --mod-adj: #fbbf24;
+    --mod-adv: #f472b6;
+    --mod-part: #38bdf8;
+    --mod-appos-bg: rgba(100,116,139,0.2);
+
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-inner: #334155;
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+    --border: #334155;
+    --accent: #60a5fa;
+    --accent-light: rgba(96,165,250,0.12);
+    --accent-border: rgba(96,165,250,0.3);
+    --translation-bg: rgba(234,179,8,0.1);
+    --translation-border: #a16207;
+    --tip-bg: rgba(22,163,74,0.1);
+    --tip-border: rgba(22,163,74,0.3);
+    --tip-text: #4ade80;
+    --warn-bg: rgba(217,119,6,0.1);
+    --warn-border: rgba(217,119,6,0.3);
+    --warn-text: #fbbf24;
+    --table-stripe: rgba(255,255,255,0.03);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+    --shadow-md: 0 2px 12px rgba(0,0,0,0.3);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.4);
+    --shadow-header: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* ── Header ── */
+  .main-header {
+    text-align: center;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #3b82f6 100%);
+    color: #fff;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-header);
+    position: relative;
+  }
+  .main-header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  .main-header p {
+    font-size: 0.95em;
+    opacity: 0.9;
+  }
+
+  /* ── Theme Toggle ── */
+  .theme-toggle {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid rgba(255,255,255,0.4);
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+  }
+  .theme-toggle:hover {
+    background: rgba(255,255,255,0.35);
+    transform: scale(1.1);
+  }
+  .theme-toggle:active {
+    transform: scale(0.95);
+  }
+
+  /* ── Legend ── */
+  .legend {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .legend h2 {
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px 16px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    padding: 6px 0;
+  }
+  .legend-preview {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.92em;
+    white-space: nowrap;
+  }
+  .legend-desc {
+    color: var(--text-light);
+    font-size: 0.88em;
+  }
+
+  /* ── Sentence Card ── */
+  .sentence-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
+  }
+  .sentence-card:hover {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .sentence-num {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #fff;
+    padding: 14px 24px;
+    font-size: 1.15em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sentence-num .badge {
+    background: rgba(255,255,255,0.2);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 500;
+  }
+
+  .sentence-body { padding: 24px 28px; }
+
+  .original-text {
+    font-size: 1.05em;
+    line-height: 2.2;
+    margin-bottom: 12px;
+    padding: 16px 20px;
+    background: var(--card-inner);
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+    transition: background-color 0.3s;
+  }
+
+  .translation {
+    font-size: 0.95em;
+    color: var(--text-light);
+    padding: 12px 20px;
+    background: var(--translation-bg);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--translation-border);
+    transition: background-color 0.3s;
+  }
+
+  /* ── Highlights (Background Style) ── */
+  .s { color: var(--s-text); font-weight: 600; background: var(--s-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .v { color: var(--v-text); font-weight: 600; background: var(--v-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .o { color: var(--o-text); font-weight: 600; background: var(--o-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .io { color: var(--c-text); font-weight: 600; background: var(--c-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .do_ { color: var(--o-text); font-weight: 600; background: var(--o-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .m { color: var(--m-text); font-weight: 600; background: var(--m-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .c { color: var(--c-text); font-weight: 600; background: var(--c-bg); padding: 2px 5px; border-radius: 4px; transition: all 0.3s; }
+  .conj { color: var(--conj-text); font-weight: 500; background: var(--conj-bg); padding: 1px 4px; border-radius: 3px; transition: all 0.3s; }
+
+  /* ═══════ HIERARCHICAL ANALYSIS CLASSES ═══════ */
+  /* Core Elements - strong visual weight */
+  .c-s  { color: var(--s-text);  background: var(--s-bg);  font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-v  { color: var(--v-text);  background: var(--v-bg);  font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-o  { color: var(--o-text);  background: var(--o-bg);  font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-c  { color: var(--c-text);  background: var(--c-bg);  font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-io { color: var(--io-text); background: var(--io-bg); font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-do { color: var(--do-text); background: var(--do-bg); font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+  .c-oc { color: var(--oc-text); background: var(--oc-bg); font-weight: 700; padding: 2px 6px; border-radius: 4px; display: inline; }
+
+  /* Modifier Elements - subtle visual weight (underlines) */
+  .m-adj-c { border-bottom: 2.5px dashed var(--mod-adj); padding-bottom: 1px; }   /* 형용사절 */
+  .m-adj-p { border-bottom: 2.5px dotted var(--mod-adj); padding-bottom: 1px; }   /* 형용사구 */
+  .m-adv-c { border-bottom: 2.5px dashed var(--mod-adv); padding-bottom: 1px; }   /* 부사절 */
+  .m-adv-p { border-bottom: 2.5px dotted var(--mod-adv); padding-bottom: 1px; }   /* 부사구 */
+  .m-part  { border-bottom: 2.5px solid var(--mod-part); padding-bottom: 1px; }    /* 분사구문 */
+  .m-appos { background: var(--mod-appos-bg); padding: 2px 4px; border-radius: 4px; font-style: italic; } /* 동격 */
+  .noun-c  { border-bottom: 2.5px double var(--c-text); padding-bottom: 1px; font-style: italic; }  /* 명사절 (핵심 성분 역할) */
+
+  /* Modifier Analysis Section */
+  .modifier-analysis { margin: 12px 0 20px; padding: 12px 16px; background: var(--card-inner); border-radius: 10px; border-left: 3px solid var(--accent); }
+  .modifier-analysis strong { color: var(--accent); }
+  .modifier-analysis ul { margin: 8px 0 0; padding-left: 20px; }
+  .modifier-analysis li { margin-bottom: 6px; line-height: 1.7; font-size: 0.92em; }
+  .modifier-analysis li strong { color: var(--text); }
+
+  /* ── Section Titles ── */
+  .section-title {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 20px 0 12px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    color: var(--text);
+  }
+
+  /* ── Analysis Table ── */
+  .analysis-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+  }
+  .analysis-table caption {
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 8px 0;
+    color: var(--text-light);
+  }
+  .analysis-table th {
+    background: var(--card-inner);
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85em;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+    transition: background-color 0.3s;
+  }
+  .analysis-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    transition: background-color 0.3s;
+  }
+  .analysis-table td:first-child {
+    text-align: center;
+    font-weight: 500;
+    white-space: nowrap;
+    background: var(--table-stripe);
+  }
+  .th-s { color: var(--s-text); }
+  .th-v { color: var(--v-text); }
+  .th-o { color: var(--o-text); }
+  .th-m { color: var(--m-text); }
+  .th-c { color: var(--c-text); }
+
+  .cell-s { color: var(--s-text); font-weight: 500; }
+  .cell-v { color: var(--v-text); font-weight: 500; }
+  .cell-o { color: var(--o-text); font-weight: 500; }
+  .cell-m { color: var(--m-text); font-weight: 500; }
+  .cell-c { color: var(--c-text); font-weight: 500; }
+  .empty { color: #cbd5e1; text-align: center; }
+
+  /* ── Grammar Note ── */
+  .grammar-note {
+    background: var(--accent-light);
+    border: 1px solid var(--accent-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.9em;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .grammar-note strong { color: var(--accent); }
+  .grammar-note ul { padding-left: 18px; margin-top: 6px; }
+  .grammar-note li { margin-bottom: 4px; }
+
+  /* ── Vocab Table ── */
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88em;
+    margin-top: 10px;
+  }
+  .vocab-table th {
+    background: var(--card-inner);
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    font-size: 0.85em;
+    transition: background-color 0.3s;
+  }
+  .vocab-table td {
+    padding: 7px 12px;
+    border: 1px solid var(--border);
+  }
+  .vocab-table tr:nth-child(even) { background: var(--table-stripe); }
+  .vocab-table .word-en {
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+  }
+  .vocab-table .pos {
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--text-light);
+    white-space: nowrap;
+  }
+
+  /* ── Collapsible ── */
+  details {
+    margin-top: 12px;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    padding: 8px 0;
+    font-size: 0.95em;
+    user-select: none;
+    list-style: none;
+  }
+  details summary::before {
+    content: '▸ ';
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  details[open] summary::before {
+    content: '▾ ';
+  }
+
+  /* ── Table Scroll Wrapper (mobile horizontal scroll) ── */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  .table-scroll .analysis-table,
+  .table-scroll .vocab-table {
+    min-width: 480px;
+    margin-bottom: 0;
+  }
+  .table-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+  .table-scroll::-webkit-scrollbar-track {
+    background: var(--card-inner);
+    border-radius: 3px;
+  }
+  .table-scroll::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(2px);
+  }
+  .sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100dvh;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-header {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .sidebar-header h2 {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+  }
+  .sidebar-close {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: var(--text-light);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .sidebar-close:hover {
+    background: var(--card-inner);
+    color: var(--text);
+  }
+
+  .sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 0;
+  }
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.92em;
+    transition: background 0.15s, color 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .sidebar-nav a:hover {
+    background: var(--card-inner);
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+  .sidebar-nav a .nav-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 24px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.78em;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .sidebar-nav a .nav-label {
+    flex: 1;
+  }
+  .sidebar-nav .nav-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 20px;
+  }
+
+  /* ── Accordion Nav Groups ── */
+  .nav-group { border-bottom: 1px solid var(--border); }
+  .nav-group:last-child { border-bottom: none; }
+  .nav-group-toggle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 13px 20px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, color 0.15s;
+  }
+  .nav-group-toggle:hover {
+    background: var(--card-inner);
+    color: var(--accent);
+  }
+  .nav-group-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nav-group-items.open {
+    max-height: 600px;
+  }
+  .nav-group-items a {
+    padding-left: 28px;
+  }
+
+  #sentenceSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+  }
+  #sentenceSearch::placeholder { color: var(--text-light); opacity: 0.6; }
+  .menu-toggle {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.4);
+    z-index: 100;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .menu-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37,99,235,0.5);
+  }
+  .menu-toggle:active {
+    transform: scale(0.95);
+  }
+
+  /* ── Print (force light mode) ── */
+  @media print {
+    html { color-scheme: light !important; }
+    html, html[data-theme="dark"] {
+      --s-text: #1d4ed8; --s-bg: #dbeafe;
+      --v-text: #b91c1c; --v-bg: #fee2e2;
+      --o-text: #047857; --o-bg: #d1fae5;
+      --c-text: #7e22ce; --c-bg: #f3e8ff;
+      --m-text: #b45309; --m-bg: #fef3c7;
+      --conj-text: #475569; --conj-bg: #f1f5f9;
+      --bg: #fff; --card: #fff; --card-inner: #f1f5f9;
+      --text: #1e293b; --text-light: #64748b; --border: #e2e8f0;
+    }
+    body { padding: 10px; font-size: 11pt; }
+    .sentence-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    .main-header { background: #1e3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .theme-toggle { display: none !important; }
+    .menu-toggle { display: none !important; }
+    .sidebar { display: none !important; }
+    .sidebar-overlay { display: none !important; }
+    details[open] summary { display: none; }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    .sentence-body { padding: 16px; }
+    .legend-grid { grid-template-columns: 1fr; }
+    .analysis-table { font-size: 0.8em; }
+    .analysis-table th, .analysis-table td { padding: 6px 8px; }
+    .theme-toggle { width: 40px; height: 40px; font-size: 1.1em; top: 12px; right: 12px; }
+    .sidebar { width: 260px; }
+    .menu-toggle { bottom: 18px; left: 18px; width: 48px; height: 48px; font-size: 1.2em; }
+  }
+
+  .tip-box {
+    background: var(--tip-bg);
+    border: 1px solid var(--tip-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.9em;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .tip-box strong { color: var(--tip-text); }
+
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.9em;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .warn-box strong { color: var(--warn-text); }
+</style>
+</head>
+<body>
+
+<header class="main-header">
+  <button class="theme-toggle" id="themeToggle" title="라이트/다크 모드 전환" aria-label="테마 전환">🌙</button>
+  <h1>📖 영어 독해 구조 분석 해설지</h1>
+  <p>21~36번 주요 지문 · 주어/동사/목적어/보어/수식어 완전 분석 + 단어장</p>
+  <p style="font-size:0.8em; opacity:0.7; margin-top:6px;">고1~고2 수준 · 수능 독해 해설지</p>
+</header>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>목차</h2>
+    <button class="sidebar-close" id="sidebarClose" title="닫기" aria-label="메뉴 닫기">&times;</button>
+  </div>
+  <div style="padding: 12px 20px;">
+    <input type="number" id="sentenceSearch" placeholder="지문 번호 (21~36) + Enter" style="width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:8px; background:var(--card-inner); color:var(--text); font-size:0.9em; outline:none; transition:all 0.3s;">
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-group">
+      <a href="#s1"><span class="nav-num">21</span> <span class="nav-label">21번 지문</span></a>
+      <a href="#s2"><span class="nav-num">24</span> <span class="nav-label">24번 지문</span></a>
+      <a href="#s3"><span class="nav-num">26</span> <span class="nav-label">26번 지문</span></a>
+      <a href="#s4"><span class="nav-num">29</span> <span class="nav-label">29번 지문</span></a>
+      <a href="#s5"><span class="nav-num">30</span> <span class="nav-label">30번 지문</span></a>
+      <a href="#s6"><span class="nav-num">34</span> <span class="nav-label">34번 지문</span></a>
+      <a href="#s7"><span class="nav-num">36</span> <span class="nav-label">36번 지문</span></a>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-group">
+      <a href="#wordlist"><span class="nav-label">📚 단어장 (21~36번)</span></a>
+    </div>
+  </div>
+</nav>
+<button class="menu-toggle" id="menuToggle" title="목차 열기" aria-label="메뉴 열기">☰</button>
+
+<main>
+<section class="legend">
+  <h2><span>📌</span> 문장 성분 분석 기호 (계층형)</h2>
+  <h3 class="section-title" style="font-size:0.95em; margin:0 0 10px;">1. 핵심 성분 (Core Elements) — 문장의 뼈대</h3>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="legend-preview c-s">주어 (S)</span> <span class="legend-desc">~은/는/이/가</span></div>
+    <div class="legend-item"><span class="legend-preview c-v">동사 (V)</span> <span class="legend-desc">~하다, ~이다</span></div>
+    <div class="legend-item"><span class="legend-preview c-o">목적어 (O)</span> <span class="legend-desc">~을/를</span></div>
+    <div class="legend-item"><span class="legend-preview c-c">보어 (C)</span> <span class="legend-desc">상태/정체 설명</span></div>
+    <div class="legend-item"><span class="legend-preview c-io">간접목적어 (IO)</span> <span class="legend-desc">~에게</span></div>
+    <div class="legend-item"><span class="legend-preview c-do">직접목적어 (DO)</span> <span class="legend-desc">~을/를 (4형식)</span></div>
+    <div class="legend-item"><span class="legend-preview c-oc">목적격보어 (OC)</span> <span class="legend-desc">목적어 = OC</span></div>
+  </div>
+  <h3 class="section-title" style="font-size:0.95em; margin:18px 0 10px;">2. 수식 성분 (Modifiers) — 문장을 풍성하게</h3>
+  <div class="legend-grid">
+    <div class="legend-item"><span class="legend-preview m-adj-c">[형용사절]</span> <span class="legend-desc">명사 수식 (관계사절)</span></div>
+    <div class="legend-item"><span class="legend-preview m-adj-p">[형용사구]</span> <span class="legend-desc">명사 수식 (분사구, 전치사구)</span></div>
+    <div class="legend-item"><span class="legend-preview m-adv-c">&lt;부사절&gt;</span> <span class="legend-desc">동사/문장 수식 (when, while 등)</span></div>
+    <div class="legend-item"><span class="legend-preview m-adv-p">&lt;부사구&gt;</span> <span class="legend-desc">동사/문장 수식 (전치사구, to부정사)</span></div>
+    <div class="legend-item"><span class="legend-preview m-part">(분사구문)</span> <span class="legend-desc">주절 수식 (~하면서, ~하여)</span></div>
+    <div class="legend-item"><span class="legend-preview m-appos">=동격=</span> <span class="legend-desc">앞 명사 부연 설명</span></div>
+  </div>
+  <div class="legend-grid" style="margin-top:12px;">
+    <div class="legend-item"><span class="legend-preview conj">접속사</span> <span class="legend-desc">and, but, or, that 등</span></div>
+  </div>
+</section>
+
+<!-- 21번 지문 -->
+<section class="sentence-card" id="s1">
+  <div class="sentence-num">21번 <span class="badge">수동태 · 관계대명사 · 분사구문 · 비유적 표현</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">We</span> <span class="c-v">are</span> <span class="m-adv-p">&lt;now&gt;</span> <span class="m-adv-p">&lt;at a point of unprecedented genetic, cultural, and environmental power&gt;</span> <span class="m-adv-p">&lt;as a species&gt;</span>, <span class="conj">and</span> <span class="c-s">we</span> <span class="c-v">are linked</span> <span class="m-adv-p">&lt;to nearly every other person on Earth&gt;</span>.
+      <span class="c-s">We</span> <span class="c-v">are</span> <span class="c-c">embodied individuals</span> <span class="m-adj-p">[trapped within limited time]</span>, <span class="conj">but</span> <span class="c-s">we</span> <span class="c-v">are</span> <span class="m-adv-p">&lt;also&gt;</span> <span class="c-c">networked data streams, memories, and influencers, and part of a grander humanity</span>.
+      <span class="c-s">Our decisions</span> <span class="m-adv-p">&lt;today&gt;</span> <span class="c-v">have</span> <span class="c-o">far-reaching impacts</span> <span class="m-adj-c">[that place a responsibility on us <span class="m-adj-p">[to become good ancestors]</span>, <span class="m-adj-p">[to take the long view and time travel forward]</span> <span class="m-adv-p">&lt;to imagine the wellbeing of billions of people <span class="m-adj-c">[whose lives will be lived <span class="m-adv-p">&lt;in the world <span class="m-adj-c">[we are currently making]</span>&gt;</span>]</span>&gt;</span>]</span>.
+      <span class="m-adv-p">&lt;Centuries ago&gt;</span>, <span class="c-s">leaders <span class="m-adj-p">[of the native North American Iroquois people]</span></span> <span class="c-v">created</span> <span class="c-o">"seven generation stewardship,"</span> <span class="m-part">(instructing people <span class="c-oc">to consider the impact of every decision on their children</span>, seven generations into the future)</span>.
+      <span class="m-adv-c">&lt;In the precious few decades <span class="m-adj-c">[that Earth is ours]</span>&gt;</span>, <span class="m-adv-c">&lt;while we enjoy the gardens <span class="m-adj-p">[planted by our ancestors]</span>&gt;</span>, <span class="c-s">we</span> <span class="c-v">must not steal</span> <span class="c-o">the shade</span> <span class="m-adv-p">&lt;from our descendants&gt;</span>.
+    </div>
+    <div class="translation">🇰🇷 우리는 이제 종으로서 전례 없는 유전적, 문화적, 환경적 힘의 지점에 와 있으며, 지구상의 거의 모든 사람과 연결되어 있다. 우리는 제한된 시간 안에 갇힌 육체를 가진 개인이지만, 동시에 네트워크화된 데이터 흐름이자, 기억이자, 영향력을 가진 존재이며, 더 위대한 인류의 일부이다. 오늘날 우리의 결정은 우리가 좋은 조상이 되어야 할 책임을 부여하는 광범위한 영향을 미치며, 장기적인 관점을 취하고 미래로 시간 여행을 하여 우리가 현재 만들고 있는 세계에서 살아갈 수십억 명의 사람들의 안녕을 상상하게 한다. 수세기 전, 북미 원주민 이로쿼이족의 지도자들은 "7세대 관리 정신"을 만들어 사람들에게 모든 결정이 7세대 후의 자녀들에게 미칠 영향을 고려하라고 가르쳤다. 지구가 우리의 것인 소중한 몇 십 년 동안, 조상이 심은 정원을 즐기는 동안, 우리는 후손의 그늘을 빼앗아서는 안 된다.</div>
+    
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>절 1 — 2형식 (S + V + C) / 절 2 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>절 1</td>
+          <td class="cell-s">We</td>
+          <td class="cell-v">are</td>
+          <td class="cell-c">embodied individuals</td>
+        </tr>
+        <tr>
+          <td>절 2</td>
+          <td class="cell-s">we</td>
+          <td class="cell-v">are</td>
+          <td class="cell-c">networked data streams, memories, and influencers, and part of a grander humanity</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[trapped within limited time]</strong>: 보어(individuals) 수식 · <strong>형용사구</strong> (과거분사구)</li>
+          <li><strong>&lt;also&gt;</strong>: 동사(are) 수식 · <strong>부사</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>과거분사 후치수식:</strong> <code>trapped</code>가 <code>individuals</code> 수식, <code>embodied</code>, <code>networked</code></li>
+          <li><strong>등위접속사:</strong> <code>but</code></li>
+        </ul>
+      </div>
+
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-o">목적어 (O)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">leaders of the native North American Iroquois people</td>
+          <td class="cell-v">created</td>
+          <td class="cell-o">"seven generation stewardship"</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;Centuries ago&gt;</strong>: 주절 수식 · <strong>부사구</strong> (시간)</li>
+          <li><strong>[of the native North American Iroquois people]</strong>: 주어(leaders) 수식 · <strong>형용사구</strong> (전치사구)</li>
+          <li><strong>(instructing people to consider...)</strong>: 주절 수식 · <strong>분사구문</strong> (= and they instructed)
+            <ul><li>내부 구조: V(instructing) + O(people) + OC(to consider the impact...)</li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>분사구문:</strong> <code>instructing</code> = <code>and instructed</code></li>
+          <li><strong>to부정사 (목적격 보어):</strong> <code>instruct A to B</code> (5형식)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-o">목적어 (O)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">we</td>
+          <td class="cell-v">must not steal</td>
+          <td class="cell-o">the shade</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;In the precious few decades [that Earth is ours]&gt;</strong>: 주절 수식 · <strong>부사구</strong> (시간, 전치사구 + 형용사절)
+            <ul><li>[that Earth is ours]: decades 수식 · <strong>형용사절</strong> (관계대명사 that). S(Earth) + V(is) + C(ours)</li></ul>
+          </li>
+          <li><strong>&lt;while we enjoy the gardens [planted by our ancestors]&gt;</strong>: 주절 수식 · <strong>부사절</strong> (시간)
+            <ul><li>[planted by our ancestors]: gardens 수식 · <strong>형용사구</strong> (과거분사구)</li></ul>
+          </li>
+          <li><strong>&lt;from our descendants&gt;</strong>: 동사(steal) 수식 · <strong>부사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>조동사:</strong> <code>must not</code></li>
+          <li><strong>관계대명사:</strong> <code>that</code></li>
+          <li><strong>부사절 접속사:</strong> <code>while</code></li>
+          <li><strong>과거분사 후치수식:</strong> <code>planted</code></li>
+          <li><strong>비유적 표현:</strong> <code>gardens</code> = benefits, <code>shade</code> = protection</li>
+        </ul>
+
+      </div>
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th><th>참고</th></tr>
+        <tr><td class="word-en">ancestor</td><td class="pos">명사</td><td>조상</td><td>↔ descendant (후손)</td></tr>
+        <tr><td class="word-en">billion</td><td class="pos">명사</td><td>10억</td><td></td></tr>
+        <tr><td class="word-en">consider</td><td class="pos">동사</td><td>고려하다</td><td>consideration (명사)</td></tr>
+        <tr><td class="word-en">decade</td><td class="pos">명사</td><td>10년</td><td></td></tr>
+        <tr><td class="word-en">descendant</td><td class="pos">명사</td><td>후손</td><td>↔ ancestor (조상)</td></tr>
+        <tr><td class="word-en">embodied</td><td class="pos">과거분사</td><td>육체를 가진</td><td>embody (구현하다)</td></tr>
+        <tr><td class="word-en">far-reaching</td><td class="pos">형용사</td><td>광범위한</td><td>합성 형용사</td></tr>
+        <tr><td class="word-en">generation</td><td class="pos">명사</td><td>세대</td><td></td></tr>
+        <tr><td class="word-en">genetic</td><td class="pos">형용사</td><td>유전적인</td><td>gene (유전자) + -tic</td></tr>
+        <tr><td class="word-en">grander</td><td class="pos">형용사</td><td>더 위대한</td><td>grand의 비교급</td></tr>
+        <tr><td class="word-en">impact</td><td class="pos">명사</td><td>영향, 충격</td><td></td></tr>
+        <tr><td class="word-en">influencer</td><td class="pos">명사</td><td>영향력 있는 사람</td><td></td></tr>
+        <tr><td class="word-en">instruct</td><td class="pos">동사</td><td>가르치다, 지시하다</td><td>instruction (명사)</td></tr>
+        <tr><td class="word-en">linked</td><td class="pos">과거분사</td><td>연결된</td><td>be linked to = ~와 연결되다</td></tr>
+        <tr><td class="word-en">networked</td><td class="pos">과거분사</td><td>네트워크화된</td><td></td></tr>
+        <tr><td class="word-en">precious</td><td class="pos">형용사</td><td>소중한, 귀중한</td><td></td></tr>
+        <tr><td class="word-en">responsibility</td><td class="pos">명사</td><td>책임</td><td>responsible (형용사)</td></tr>
+        <tr><td class="word-en">shade</td><td class="pos">명사</td><td>그늘</td><td>비유: 보호, 혜택</td></tr>
+        <tr><td class="word-en">species</td><td class="pos">명사</td><td>종(種)</td><td>단수·복수 동형</td></tr>
+        <tr><td class="word-en">steal</td><td class="pos">동사</td><td>훔치다</td><td>steal-stole-stolen</td></tr>
+        <tr><td class="word-en">stewardship</td><td class="pos">명사</td><td>관리, 책임감</td><td>steward (관리인) + -ship</td></tr>
+        <tr><td class="word-en">trapped</td><td class="pos">과거분사</td><td>갇힌</td><td>trap (가두다)</td></tr>
+        <tr><td class="word-en">unprecedented</td><td class="pos">형용사</td><td>전례 없는</td><td>un- + precedent + -ed</td></tr>
+        <tr><td class="word-en">wellbeing</td><td class="pos">명사</td><td>안녕, 복지</td><td>= well-being</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 24번 지문 -->
+<section class="sentence-card" id="s2">
+  <div class="sentence-num">24번 <span class="badge">동명사 주어 · 관계대명사 whose · 수동태 · 비교급</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">Habits</span> <span class="c-v">aren't</span> <span class="c-c">bad</span>.
+      <span class="c-s">We</span> <span class="c-v">need</span> <span class="c-o">them</span> <span class="m-adv-p">&lt;to survive&gt;</span>.
+      <span class="c-s">Understanding <span class="noun-c">[how the brain uses habits]</span>, and <span class="noun-c">[how you can work with them]</span></span>, <span class="c-v">is</span> <span class="c-c">essential</span> <span class="m-adv-p">&lt;for business&gt;</span>.
+      <span class="c-s">One question <span class="m-adj-p">[to ask]</span></span> <span class="c-v">is</span>, <span class="c-c">are you really trying to break a habit, or would you do better <span class="m-adv-p">&lt;by attaching to another one&gt;</span> <span class="m-adj-p">[known as temptation bundling]</span></span>?
+      <span class="c-s">Wharton professor Katy Milkman</span> <span class="c-v">led</span> <span class="c-o">a research project <span class="m-adj-p">[called Holding the Hunger Games Hostage at the Gym]</span></span>, <span class="m-adj-c">[where participants could only have access to their audio devices <span class="m-adv-c">&lt;while at the gym&gt;</span>]</span>.
+      <span class="c-s">This</span> <span class="c-v">uses</span> <span class="c-o">a tempting habit — listening to that awesome audiobook —</span> <span class="conj">and</span> <span class="c-v">combines</span> <span class="c-o">it</span> <span class="m-adv-p">&lt;with a habit <span class="m-adj-c">[(that) people would like to build, but may otherwise feel forced to put off]</span>, like exercising&gt;</span>.
+      <span class="c-s">The participants <span class="m-adj-c">[whose devices were "held hostage"]</span></span> <span class="c-v">were</span> <span class="c-c">51 percent more likely to visit the gym</span>.
+      <span class="conj">And</span> <span class="c-s">the really amazing thing</span> <span class="c-v">is</span> <span class="c-c"><span class="noun-c">[what happened <span class="m-adv-c">&lt;after it was over&gt;</span>]</span></span>: <span class="c-s">nearly two-thirds</span> <span class="c-v">opted</span> <span class="c-o">to pay to have gym-only access <span class="m-adv-p">&lt;for their devices&gt;</span></span>!
+    </div>
+    <div class="translation">🇰🇷 습관은 나쁜 것이 아니다. 우리는 생존하기 위해 습관이 필요하다. 뇌가 어떻게 습관을 사용하는지, 그리고 어떻게 그것과 함께 일할 수 있는지 이해하는 것은 사업에 필수적이다. 물어볼 질문 하나는, 당신이 정말로 습관을 깨려고 노력하고 있는 것인지, 아니면 다른 습관에 붙여서 더 잘할 수 있는 것인지(유혹 번들링으로 알려진)이다. 와튼 교수 Katy Milkman은 "체육관에서 헝거 게임을 인질로 잡기"라는 연구 프로젝트를 이끌었는데, 참가자들은 체육관에 있을 때만 오디오 기기에 접근할 수 있었다. 이것은 유혹적인 습관 — 멋진 오디오북 듣기 — 을 사용하고, 사람들이 키우고 싶지만 미루게 될 수 있는 습관, 예를 들어 운동과 결합한다. 기기가 "인질로 잡힌" 참가자들은 체육관을 방문할 가능성이 51퍼센트 더 높았다. 그리고 정말 놀라운 것은 그것이 끝난 후에 일어난 일이다: 거의 3분의 2가 기기의 체육관 전용 접근을 위해 돈을 내기로 선택했다!</div>
+    
+    <div class="grammar-note" style="border-left: 4px solid var(--tip-text); background: var(--tip-bg); border-color: var(--tip-border);">
+      <strong>❓ 이 글의 제목으로 가장 적절한 것은?</strong>
+      <ol style="margin-top:8px; padding-left:20px;">
+        <li>Stop Thinking and Just Go to the Gym Now!</li>
+        <li>Avoid Listening to Music While You Work Out</li>
+        <li>Why Smart Businesses Focus on Healthcare Service</li>
+        <li>The Key to Success in Life: Give Up Everyday Hobbies</li>
+        <li>Pairing Pleasure with Effort: Guiding People to New Behavior</li>
+      </ol>
+      <details>
+        <summary style="color: var(--tip-text); margin-top:8px;">🔑 정답 보기</summary>
+        <p style="margin-top:6px;"><strong>정답: ⑤</strong> — 유혹적인 활동(오디오북 듣기)과 노력이 필요한 활동(운동)을 결합하여 새로운 행동을 유도하는 '유혹 번들링(temptation bundling)'이 핵심 내용이다.</p>
+      </details>
+    </div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1-2</h3>
+      <table class="analysis-table">
+        <caption>문장 1 — 2형식 (S + V + C) / 문장 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-o">목적어 (O)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>문장 1</td>
+          <td class="cell-s">Habits</td>
+          <td class="cell-v">aren't</td>
+          <td class="empty">-</td>
+          <td class="cell-c">bad</td>
+        </tr>
+        <tr>
+          <td>문장 2</td>
+          <td class="cell-s">We</td>
+          <td class="cell-v">need</td>
+          <td class="cell-o">them</td>
+          <td class="empty">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;to survive&gt;</strong>: 동사(need) 수식 · <strong>부사구</strong> (to부정사, 목적)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>to부정사 부사적 용법:</strong> 목적 (~하기 위해)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">Understanding [...]</td>
+          <td class="cell-v">is</td>
+          <td class="cell-c">essential</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[how the brain uses habits]</strong>: Understanding의 목적어 · <strong>명사절</strong> (간접의문문)
+            <ul><li>내부 구조: S(the brain) + V(uses) + O(habits)</li></ul>
+          </li>
+          <li><strong>[how you can work with them]</strong>: Understanding의 목적어 · <strong>명사절</strong> (간접의문문)
+            <ul><li>내부 구조: S(you) + V(can work) + 부사구(with them)</li></ul>
+          </li>
+          <li><strong>&lt;for business&gt;</strong>: 보어(essential) 수식 · <strong>부사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>동명사 주어:</strong> <code>Understanding...</code></li>
+          <li><strong>간접의문문:</strong> <code>how...</code></li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">One question</td>
+          <td class="cell-v">is</td>
+          <td class="cell-c">are you really trying to break a habit, or would you do better...</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[to ask]</strong>: question 수식 · <strong>형용사구</strong> (to부정사)</li>
+          <li><strong>&lt;by attaching to another one&gt;</strong>: 동사(do) 수식 · <strong>부사구</strong> (전치사구)</li>
+          <li><strong>[known as temptation bundling]</strong>: another one 수식 · <strong>형용사구</strong> (과거분사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>to부정사 형용사적 용법:</strong> <code>to ask</code></li>
+          <li><strong>과거분사 후치수식:</strong> <code>known as</code></li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-o">목적어 (O)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">Wharton professor Katy Milkman</td>
+          <td class="cell-v">led</td>
+          <td class="cell-o">a research project</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[called Holding the Hunger Games Hostage at the Gym]</strong>: project 수식 · <strong>형용사구</strong> (과거분사구)</li>
+          <li><strong>[where participants could only have access to their audio devices...]</strong>: project(=the Gym) 수식 · <strong>형용사절</strong> (관계부사 where)
+            <ul><li>내부 구조: S(participants) + V(could have access to) + O(their audio devices)</li></ul>
+          </li>
+          <li><strong>&lt;while at the gym&gt;</strong>: 형용사절 내부 동사 수식 · <strong>부사절</strong> (시간)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>과거분사 수식:</strong> <code>called</code></li>
+          <li><strong>관계부사:</strong> <code>where</code></li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 6</h3>
+      <table class="analysis-table">
+        <caption>절 1+2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-o">목적어 (O)</th>
+        </tr>
+        <tr>
+          <td>절 1</td>
+          <td class="cell-s">This</td>
+          <td class="cell-v">uses</td>
+          <td class="cell-o">a tempting habit</td>
+        </tr>
+        <tr>
+          <td>절 2 (and)</td>
+          <td class="cell-s">(This)</td>
+          <td class="cell-v">combines</td>
+          <td class="cell-o">it</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>— listening to that awesome audiobook —</strong>: habit의 <strong>동격/부연설명</strong></li>
+          <li><strong>&lt;with a habit ... like exercising&gt;</strong>: 동사(combines) 수식 · <strong>부사구</strong> (전치사구)</li>
+          <li><strong>[(that) people would like to build, but may otherwise feel forced to put off]</strong>: habit 수식 · <strong>형용사절</strong> (목적격 관계대명사 생략)
+            <ul><li>내부 구조: S(people) + V(would like to build / feel forced to put off) + O(that=habit)</li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>관계대명사 생략:</strong> <code>(that) people would like to build...</code></li>
+          <li><strong>수동/사역 의미:</strong> <code>feel forced</code></li>
+          <li><strong>구동사:</strong> <code>put off</code> (미루다)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 7</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">The participants</td>
+          <td class="cell-v">were</td>
+          <td class="cell-c">51 percent more likely to visit the gym</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[whose devices were "held hostage"]</strong>: participants 수식 · <strong>형용사절</strong> (소유격 관계대명사 whose)
+            <ul><li>내부 구조: S(whose devices) + V(were held) [수동태]</li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>소유격 관계대명사:</strong> <code>whose</code></li>
+          <li><strong>수동태:</strong> <code>were held</code></li>
+          <li><strong>비교급:</strong> <code>more likely</code></li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 8</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th>구분</th>
+          <th class="th-s">주어 (S)</th>
+          <th class="th-v">동사 (V)</th>
+          <th class="th-c">보어 (C)</th>
+        </tr>
+        <tr>
+          <td>주절</td>
+          <td class="cell-s">the really amazing thing</td>
+          <td class="cell-v">is</td>
+          <td class="cell-c">what happened after it was over...</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[what happened after it was over]</strong>: 보어 역할 · <strong>명사절</strong> (관계대명사 what)
+            <ul><li>내부 구조: S(what) + V(happened)</li></ul>
+          </li>
+          <li><strong>&lt;after it was over&gt;</strong>: happened 수식 · <strong>부사절</strong> (시간)</li>
+          <li><strong>Colon explanation: nearly two-thirds opted to pay to have gym-only access</strong>: 
+            <ul><li>S(nearly two-thirds) + V(opted) + O(to pay to have gym-only access)</li></ul>
+          </li>
+          <li><strong>&lt;for their devices&gt;</strong>: access 수식 · <strong>부사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>명사절:</strong> <code>what</code></li>
+          <li><strong>to부정사 연쇄:</strong> <code>opted to pay to have</code></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th><th>참고</th></tr>
+        <tr><td class="word-en">access</td><td class="pos">명사</td><td>접근</td><td>have access to = ~에 접근하다</td></tr>
+        <tr><td class="word-en">attach</td><td class="pos">동사</td><td>붙이다, 연결하다</td><td>attach to = ~에 붙이다</td></tr>
+        <tr><td class="word-en">awesome</td><td class="pos">형용사</td><td>멋진, 굉장한</td><td></td></tr>
+        <tr><td class="word-en">break</td><td class="pos">동사</td><td>깨다, 끊다</td><td>break a habit = 습관을 끊다</td></tr>
+        <tr><td class="word-en">bundling</td><td class="pos">명사</td><td>묶기, 번들링</td><td>bundle (묶다)</td></tr>
+        <tr><td class="word-en">combine</td><td class="pos">동사</td><td>결합하다</td><td>combine A with B</td></tr>
+        <tr><td class="word-en">device</td><td class="pos">명사</td><td>기기, 장치</td><td></td></tr>
+        <tr><td class="word-en">essential</td><td class="pos">형용사</td><td>필수적인</td><td>= necessary</td></tr>
+        <tr><td class="word-en">forced</td><td class="pos">과거분사</td><td>강요된</td><td>feel forced to = ~하도록 강요받다고 느끼다</td></tr>
+        <tr><td class="word-en">habit</td><td class="pos">명사</td><td>습관</td><td></td></tr>
+        <tr><td class="word-en">hostage</td><td class="pos">명사</td><td>인질</td><td>hold hostage = 인질로 잡다</td></tr>
+        <tr><td class="word-en">likely</td><td class="pos">형용사</td><td>~할 가능성이 있는</td><td>more likely = 더 높은 가능성</td></tr>
+        <tr><td class="word-en">opt</td><td class="pos">동사</td><td>선택하다</td><td>opt to do = ~하기로 선택하다</td></tr>
+        <tr><td class="word-en">otherwise</td><td class="pos">부사</td><td>그렇지 않으면</td><td></td></tr>
+        <tr><td class="word-en">participant</td><td class="pos">명사</td><td>참가자</td><td>participate (참가하다)</td></tr>
+        <tr><td class="word-en">percent</td><td class="pos">명사</td><td>퍼센트</td><td></td></tr>
+        <tr><td class="word-en">put off</td><td class="pos">동사구</td><td>미루다</td><td>= postpone</td></tr>
+        <tr><td class="word-en">research</td><td class="pos">명사</td><td>연구</td><td></td></tr>
+        <tr><td class="word-en">survive</td><td class="pos">동사</td><td>생존하다</td><td>survival (명사)</td></tr>
+        <tr><td class="word-en">temptation</td><td class="pos">명사</td><td>유혹</td><td>tempt (유혹하다)</td></tr>
+        <tr><td class="word-en">tempting</td><td class="pos">형용사</td><td>유혹적인</td><td>tempt + -ing</td></tr>
+        <tr><td class="word-en">two-thirds</td><td class="pos">명사</td><td>3분의 2</td><td>분수 표현</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 26번 지문 -->
+<section class="sentence-card" id="s3">
+  <div class="sentence-num">26번 <span class="badge">관계부사 where · 관계대명사 that · 분사구문 · 동명사</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">Gary Graffman</span> <span class="c-v">was born</span> <span class="m-adv-p">&lt;in New York City&gt;</span> <span class="m-adv-p">&lt;in 1928&gt;</span> <span class="conj">and</span> <span class="c-v">began</span> <span class="c-o">playing the piano</span> <span class="m-adv-p">&lt;at the age of three&gt;</span>.
+      <span class="m-adv-c">&lt;When he was seven&gt;</span>, <span class="c-s">he</span> <span class="c-v">entered</span> <span class="c-o">the Curtis Institute of Music</span>, <span class="m-adj-c">[where he received training <span class="m-adj-c">[that laid the foundation for his career]</span>]</span>.
+      <span class="m-adv-p">&lt;In 1949&gt;</span>, <span class="c-s">he</span> <span class="c-v">won</span> <span class="c-o">the Leventritt Award</span> <span class="conj">and then</span> <span class="c-v">played</span> <span class="c-o">concerts</span> <span class="m-adv-p">&lt;worldwide&gt;</span>.
+      <span class="m-adv-p">&lt;In the late 1970s&gt;</span>, <span class="c-s">Graffman</span> <span class="c-v">lost</span> <span class="c-o">control <span class="m-adj-p">[of the fingers on his right hand]</span></span>, <span class="conj">but</span> <span class="c-s">he</span> <span class="m-adv-p">&lt;never&gt;</span> <span class="c-v">gave up</span> <span class="c-o">playing the piano</span>.
+      <span class="m-part">(Reconsidering the traditional piano performance convention of using both hands)</span>, <span class="c-s">he</span> <span class="c-v">focused</span> <span class="m-adv-p">&lt;on works for the left hand alone, such as Ravel's Piano Concerto for the Left Hand&gt;</span>.
+      <span class="c-s">Graffman</span> <span class="c-v">returned</span> <span class="m-adv-p">&lt;to the Curtis Institute of Music&gt;</span> <span class="m-adv-p">&lt;in 1980&gt;</span> <span class="m-adv-p">&lt;as a member of the piano faculty&gt;</span>.
+      <span class="m-adv-p">&lt;There&gt;</span> <span class="c-s">he</span> <span class="c-v">taught</span> <span class="c-o">many outstanding young musicians, including Lang Lang</span>, <span class="conj">and</span> <span class="c-s">his lifelong commitment to music</span> <span class="c-v">continues</span> <span class="c-o">to inspire people</span> <span class="m-adv-p">&lt;today&gt;</span>.
+    </div>
+    <div class="translation">🇰🇷 Gary Graffman은 1928년 뉴욕에서 태어나 세 살 때 피아노를 치기 시작했다. 일곱 살 때 그는 Curtis 음악원에 입학했는데, 그곳에서 그는 그의 경력의 기초를 놓은 훈련을 받았다. 1949년 그는 Leventritt상을 수상했고 이후 전 세계에서 콘서트를 열었다. 1970년대 후반, Graffman은 오른손 손가락의 통제력을 잃었지만, 피아노 연주를 포기하지 않았다. 양손을 사용하는 전통적 피아노 연주 관습을 재고하며, 그는 Ravel의 왼손을 위한 피아노 협주곡과 같은 왼손만을 위한 작품에 집중했다. Graffman은 1980년 피아노과 교수진으로 Curtis 음악원에 복귀했다. 그곳에서 그는 Lang Lang을 포함한 많은 뛰어난 젊은 음악가들을 가르쳤고, 음악에 대한 그의 평생의 헌신은 오늘날에도 사람들에게 영감을 주고 있다.</div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 1형식 (S + V) / 주절 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Gary Graffman</td>
+          <td class="cell-v">was born</td>
+          <td class="cell-o">-</td>
+        </tr>
+        <tr>
+          <td class="cell-s">(Gary Graffman)</td>
+          <td class="cell-v">began</td>
+          <td class="cell-o">playing the piano</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;in New York City&gt;</strong>: 동사(was born) 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;in 1928&gt;</strong>: 동사(was born) 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;at the age of three&gt;</strong>: 동사(began) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 등위접속사 and로 연결된 병렬 구조, 동명사 목적어(playing)
+      </div>
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-o">목적어 (O)</th></tr>
+        <tr><td>주절</td><td class="cell-s">he</td><td class="cell-v">entered</td><td class="cell-o">the Curtis Institute of Music</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;When he was seven&gt;</strong>: 주절 수식 · <strong>부사절</strong> (시간)</li>
+          <li><strong>[where he received training...]</strong>: Institute 수식 (계속적 용법) · <strong>형용사절</strong> (관계부사 where)
+            <ul><li>내부 구조: S(he) + V(received) + O(training)</li></ul>
+          </li>
+          <li><strong>[that laid the foundation for his career]</strong>: training 수식 · <strong>형용사절</strong> (주격 관계대명사 that)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>관계부사 계속적 용법:</strong> <code>, where</code> (= and there)</li>
+          <li><strong>주격 관계대명사:</strong> <code>that</code></li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 3형식 (S + V + O) / 주절 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">he</td>
+          <td class="cell-v">won</td>
+          <td class="cell-o">the Leventritt Award</td>
+        </tr>
+        <tr>
+          <td class="cell-s">(he)</td>
+          <td class="cell-v">played</td>
+          <td class="cell-o">concerts</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;In 1949&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;worldwide&gt;</strong>: 동사(played) 수식 · <strong>부사</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> and then으로 연결된 동사 병렬 구조
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>절 1 — 3형식 (S + V + O) / 절 2 — 3형식 (S + V + O)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-o">목적어 (O)</th></tr>
+        <tr><td>절 1</td><td class="cell-s">Graffman</td><td class="cell-v">lost</td><td class="cell-o">control</td></tr>
+        <tr><td>절 2</td><td class="cell-s">he</td><td class="cell-v">gave up</td><td class="cell-o">playing the piano</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[of the fingers on his right hand]</strong>: control 수식 · <strong>형용사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>동명사 목적어:</strong> <code>gave up playing</code> (give up은 동명사를 목적어로 취함)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th></tr>
+        <tr><td>주절</td><td class="cell-s">he</td><td class="cell-v">focused</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>(Reconsidering the traditional piano performance convention of using both hands)</strong>: 주절 수식 · <strong>분사구문</strong> (~재고하면서)</li>
+          <li><strong>&lt;on works for the left hand alone, such as Ravel's Piano...&gt;</strong>: 동사(focused) 수식 · <strong>부사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>분사구문:</strong> 능동의 의미 <code>Reconsidering</code> (= As he reconsidered)</li>
+        </ul>
+      </div>
+      <h3 class="section-title">문장 6</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Graffman</td>
+          <td class="cell-v">returned</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;to the Curtis Institute of Music&gt;</strong>: 동사(returned) 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;in 1980&gt;</strong>: 동사(returned) 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;as a member of the piano faculty&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 부사구의 나열
+      </div>
+
+      <h3 class="section-title">문장 7</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 3형식 (S + V + O) / 주절 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">he</td>
+          <td class="cell-v">taught</td>
+          <td class="cell-o">many outstanding young musicians</td>
+        </tr>
+        <tr>
+          <td class="cell-s">his lifelong commitment to music</td>
+          <td class="cell-v">continues</td>
+          <td class="cell-o">to inspire people</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;There&gt;</strong>: 동사(taught) 수식 · <strong>부사</strong></li>
+          <li><strong>[including Lang Lang]</strong>: musicians 수식 · <strong>형용사구(전치사구)</strong></li>
+          <li><strong>&lt;today&gt;</strong>: 동사(inspire) 수식 · <strong>부사</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> continue + to부정사 목적어
+      </div>
+
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th></tr>
+        <tr><td class="word-en">award</td><td class="pos">명사</td><td>상</td></tr>
+        <tr><td class="word-en">career</td><td class="pos">명사</td><td>경력, 직업</td></tr>
+        <tr><td class="word-en">commitment</td><td class="pos">명사</td><td>헌신, 약속</td></tr>
+        <tr><td class="word-en">concerto</td><td class="pos">명사</td><td>협주곡</td></tr>
+        <tr><td class="word-en">convention</td><td class="pos">명사</td><td>관습, 대회</td></tr>
+        <tr><td class="word-en">faculty</td><td class="pos">명사</td><td>교수진, 능력</td></tr>
+        <tr><td class="word-en">focus on</td><td class="pos">동사구</td><td>~에 집중하다</td></tr>
+        <tr><td class="word-en">foundation</td><td class="pos">명사</td><td>기초, 토대</td></tr>
+        <tr><td class="word-en">inspire</td><td class="pos">동사</td><td>영감을 주다</td></tr>
+        <tr><td class="word-en">institute</td><td class="pos">명사</td><td>기관, 협회</td></tr>
+        <tr><td class="word-en">lifelong</td><td class="pos">형용사</td><td>평생의</td></tr>
+        <tr><td class="word-en">outstanding</td><td class="pos">형용사</td><td>뛰어난, 눈에 띄는</td></tr>
+        <tr><td class="word-en">reconsider</td><td class="pos">동사</td><td>재고하다, 다시 생각하다</td></tr>
+        <tr><td class="word-en">training</td><td class="pos">명사</td><td>훈련</td></tr>
+        <tr><td class="word-en">worldwide</td><td class="pos">부사</td><td>전 세계적으로</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 29번 지문 -->
+<section class="sentence-card" id="s4">
+  <div class="sentence-num">29번 <span class="badge">동명사 · 과거분사 후치수식 · 주어-동사 수일치 · 관계사</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">A conceptual model</span> <span class="c-v">is</span> <span class="c-c">an explanation</span>, <span class="m-appos">=usually highly simplified=</span>, <span class="m-adj-p">[of <span class="noun-c">[how something works]</span>]</span>.
+      <span class="c-s">It</span> <span class="c-v">doesn't have to be</span> <span class="c-c">complete or even accurate</span> <span class="m-adv-c">&lt;as long as it is useful&gt;</span>.
+      <span class="c-s">The files, folders, and icons <span class="m-adj-p">[displayed on the computer screen]</span></span> <span class="c-v">help</span> <span class="c-o">people</span> <span class="c-oc">create the conceptual model of documents and folders inside the computer, or of apps or applications on the screen</span>.
+      <span class="m-adv-p">&lt;In reality&gt;</span>, <span class="c-s">there</span> <span class="c-v">are</span> <span class="c-s">no folders <span class="m-adv-p">&lt;inside the computer&gt;</span></span> — <span class="c-s">they</span> <span class="c-v">are</span> <span class="c-c">effective conceptualizations <span class="m-adj-p">[designed <span class="m-adv-p">&lt;to make them easier to use&gt;</span>]</span></span>.
+      <span class="m-adv-p">&lt;Sometimes&gt;</span>, however, <span class="c-s">these descriptions</span> <span class="c-v">can add</span> <span class="m-adv-p">&lt;to the confusion&gt;</span>.
+      <span class="m-adv-c">&lt;When reading email or visiting a website&gt;</span>, <span class="c-s">the material</span> <span class="c-v">appears</span> <span class="c-c">to be on the device</span>, <span class="m-adv-c">&lt;because that is <span class="noun-c">[where it is displayed and used]</span>&gt;</span>.
+      <span class="m-adv-p">&lt;In reality&gt;</span>, however, <span class="m-adv-p">&lt;in many cases&gt;</span> <span class="c-s">the actual material</span> <span class="c-v">is</span> <span class="c-c">"in the cloud,"</span> <span class="m-part">(located on a distant machine)</span>.
+      <span class="c-s">A conceptual model</span> <span class="c-v">is</span> <span class="c-c">one single coherent image</span>, <span class="conj">but</span> <span class="m-adv-p">&lt;in reality&gt;</span> <span class="c-s">it</span> <span class="c-v">can consist</span> <span class="m-adv-p">&lt;of parts <span class="m-adj-p">[located on different machines, <span class="m-adj-c">[each of which might be located almost anywhere in the world]</span>]</span>&gt;</span>.
+    </div>
+    <div class="translation">🇰🇷 개념적 모델은 무언가가 어떻게 작동하는지에 대한, 보통 매우 단순화된 설명이다. 유용하기만 하다면 완전할 필요도, 심지어 정확할 필요도 없다. 컴퓨터 화면에 표시되는 파일, 폴더, 아이콘은 사람들이 컴퓨터 안의 문서와 폴더, 또는 화면의 앱이나 애플리케이션의 개념적 모델을 만들도록 도와준다. 사실 컴퓨터 안에는 폴더가 없다 — 그것들은 사용을 더 쉽게 만들기 위해 디자인된 효과적인 개념화이다. 그러나 때때로 이러한 묘사들이 혼란을 가중시킬 수 있다. 이메일을 읽거나 웹사이트를 방문할 때, 자료는 기기에 있는 것처럼 보이는데, 그것이 표시되고 사용되는 곳이기 때문이다. 하지만 실제로 많은 경우 실제 자료는 "클라우드에" 있으며, 먼 기계에 위치해 있다. 개념적 모델은 하나의 일관된 이미지이지만, 실제로는 각각 세계 거의 어디에나 있을 수 있는 다른 기계에 위치한 부분들로 구성될 수 있다.</div>
+
+    <div class="grammar-note" style="border-left: 4px solid var(--v-text); background: var(--v-bg); border-color: var(--v-text);">
+      <strong>❌ 어법 오류 찾기</strong>
+      <ol style="margin-top:8px; padding-left:20px;">
+        <li>accurate — ✅ 올바름</li>
+        <li><strong style="color:var(--v-text);">helps — ❌ 오류!</strong></li>
+        <li>designed — ✅ 올바름</li>
+        <li>where — ✅ 올바름</li>
+        <li>that — ✅ 올바름</li>
+      </ol>
+      <details>
+        <summary style="color: var(--v-text); margin-top:8px;">🔑 정답 보기</summary>
+        <p style="margin-top:6px;"><strong>정답: ②</strong> — 주어 "The files, folders, and icons"는 복수이므로 동사는 <code>help</code>(원형)이 되어야 한다. <code>helps</code>(3인칭 단수)는 주어-동사 수일치 오류이다.</p>
+      </details>
+    </div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">A conceptual model</td>
+          <td class="cell-v">is</td>
+          <td class="cell-o">an explanation</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>=usually highly simplified=</strong>: explanation 부연설명 · <strong>동격</strong></li>
+          <li><strong>[of how something works]</strong>: explanation 수식 · <strong>형용사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 동격 및 간접의문문 명사절(how)
+      </div>
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">It</td>
+          <td class="cell-v">doesn't have to be</td>
+          <td class="cell-o">complete or even accurate</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;as long as it is useful&gt;</strong>: 주절 수식 · <strong>부사절</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> as long as (~하는 한), 조동사 doesn't have to (~할 필요가 없다)
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 — 5형식 (S + V + O + OC)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-o">목적어 (O)</th><th class="th-c">목적격보어 (OC)</th></tr>
+        <tr><td>주절</td><td class="cell-s">The files, folders, and icons</td><td class="cell-v">help</td><td class="cell-o">people</td><td class="cell-c">create ...</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[displayed on the computer screen]</strong>: 주어 수식 · <strong>형용사구</strong> (과거분사구)</li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>수일치:</strong> 복수 주어(files, folders, icons) + 복수 동사(help)</li>
+          <li><strong>준사역동사 help:</strong> 목적격 보어로 동사원형(create) 또는 to부정사 취함</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 1형식 (S + V) / 주절 2 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">no folders</td>
+          <td class="cell-v">are</td>
+          <td class="cell-o">-</td>
+        </tr>
+        <tr>
+          <td class="cell-s">those</td>
+          <td class="cell-v">are</td>
+          <td class="cell-o">effective conceptualizations</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;In fact&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;inside the computer&gt;</strong>: folders 수식 · <strong>형용사구(또는 부사구)</strong></li>
+          <li><strong>[designed to make them easier to use]</strong>: conceptualizations 수식 · <strong>형용사구 (과거분사구)</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 유도부사 there, 과거분사 후치수식, 5형식 make(make + O + OC)
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">these depictions</td>
+          <td class="cell-v">can add</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;Sometimes&gt;</strong>: 주절 수식 · <strong>부사</strong></li>
+          <li><strong>&lt;to the confusion&gt;</strong>: 동사(add) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 자동사 add + 전치사 to
+      </div>
+
+      <h3 class="section-title">문장 6</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-c">보어 (C)</th></tr>
+        <tr><td>주절</td><td class="cell-s">the material</td><td class="cell-v">appears</td><td class="cell-c">to be on the device</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;When reading email or visiting a website&gt;</strong>: 주절 수식 · <strong>분사구문(또는 접속사+분사)</strong> (= When we read...)</li>
+          <li><strong>&lt;because that is [where it is displayed and used]&gt;</strong>: 주절 수식 · <strong>부사절</strong>
+            <ul><li>[where it is displayed and used]: is의 보어 · <strong>명사절</strong> (선행사 the place가 생략된 관계부사절)</li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>접속사가 있는 분사구문:</strong> <code>When reading...</code></li>
+          <li><strong>관계부사 where:</strong> 명사절(보어) 역할 <code>the place where</code>에서 선행사 생략</li>
+        </ul>
+      </div>
+      <h3 class="section-title">문장 7</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">the actual material</td>
+          <td class="cell-v">is</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;in fact&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;in many cases&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;"in the cloud,"&gt;</strong>: 동사(is) 수식 · <strong>부사구</strong></li>
+          <li><strong>(located on some distant machine)</strong>: 주절 수식 · <strong>분사구문</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 수동의 의미를 갖는 과거분사구문
+      </div>
+
+      <h3 class="section-title">문장 8</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">The conceptual model</td>
+          <td class="cell-v">is</td>
+          <td class="cell-o">of one, coherent image</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;whereas it may actually consist of parts...&gt;</strong>: 주절 수식 · <strong>부사절</strong></li>
+          <li><strong>(each located on different machines...)</strong>: 부대상황 · <strong>독립분사구문</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> whereas 부사절, 주어가 다른 독립분사구문
+      </div>
+
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th></tr>
+        <tr><td class="word-en">accurate</td><td class="pos">형용사</td><td>정확한</td></tr>
+        <tr><td class="word-en">cloud</td><td class="pos">명사</td><td>클라우드 (온라인 저장 공간)</td></tr>
+        <tr><td class="word-en">coherent</td><td class="pos">형용사</td><td>일관성 있는, 논리 정연한</td></tr>
+        <tr><td class="word-en">conceptual</td><td class="pos">형용사</td><td>개념적인</td></tr>
+        <tr><td class="word-en">conceptualization</td><td class="pos">명사</td><td>개념화</td></tr>
+        <tr><td class="word-en">confusion</td><td class="pos">명사</td><td>혼란</td></tr>
+        <tr><td class="word-en">consist of</td><td class="pos">동사구</td><td>~로 구성되다</td></tr>
+        <tr><td class="word-en">description</td><td class="pos">명사</td><td>묘사, 설명</td></tr>
+        <tr><td class="word-en">display</td><td class="pos">동사</td><td>표시하다, 보여주다</td></tr>
+        <tr><td class="word-en">distant</td><td class="pos">형용사</td><td>먼, 멀리 떨어진</td></tr>
+        <tr><td class="word-en">effective</td><td class="pos">형용사</td><td>효과적인</td></tr>
+        <tr><td class="word-en">explanation</td><td class="pos">명사</td><td>설명</td></tr>
+        <tr><td class="word-en">material</td><td class="pos">명사</td><td>자료, 물질</td></tr>
+        <tr><td class="word-en">simplify</td><td class="pos">동사</td><td>단순화하다</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 30번 지문 -->
+<section class="sentence-card" id="s5">
+  <div class="sentence-num">30번 <span class="badge">부사절 · 관계대명사 that · 어휘 추론 · 역접</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">The main mode <span class="m-adj-p">[of transportation in developing countries, even in large cities,]</span></span> <span class="c-v">continues to be</span> <span class="c-c">walking</span>, <span class="m-adv-p">&lt;because of the constraints on resources <span class="m-adj-c">[that are required to run an extensive public transportation system]</span>&gt;</span>.
+      <span class="c-s">People</span> <span class="c-v">walk</span> <span class="c-o">long distances</span> <span class="m-adv-p">&lt;every day&gt;</span>, <span class="m-part">(consuming human energy <span class="m-adj-c">[that they can little afford to spare]</span>)</span>.
+      <span class="c-s">Walking <span class="m-adj-p">[under such conditions]</span></span> <span class="c-v">is</span> <span class="c-c">an unavoidable burden <span class="m-adj-c">[that consumes productive capacity]</span></span>.
+      <span class="m-adv-p">&lt;In North America and Western Europe&gt;</span>, however, <span class="c-s">attitudes and policies</span> <span class="c-v">are</span> <span class="c-c">the opposite</span>: <span class="c-s">walking</span> <span class="c-v">is</span> <span class="c-c">efficient, healthy, and natural</span>.
+      <span class="c-s">We</span> <span class="c-v">should do</span> <span class="c-o">it</span> <span class="m-adv-p">&lt;more&gt;</span> — almost everyone agrees — <span class="conj">and</span> <span class="c-s">some <span class="m-adj-p">[of the current trends]</span></span> <span class="c-v">should be reversed</span>.
+      <span class="m-adv-p">&lt;Ironically&gt;</span>, <span class="m-adv-p">&lt;among the most popular exercise machines in health clubs and homes&gt;</span> <span class="c-v">are</span> <span class="c-s">treadmills, <span class="m-adj-c">[which simulate walking]</span>, <span class="m-appos">=something <span class="m-adj-c">[that could be accomplished for transportation purposes on the streets]</span>=</span></span>.
+    </div>
+    <div class="translation">🇰🇷 개발도상국의 주요 교통 수단은, 대도시에서조차, 광범위한 대중교통 시스템을 운영하는 데 필요한 자원의 제약 때문에 여전히 걸어다니는 것이다. 사람들은 매일 걸어서 먼 거리를 이동하며 거의 남길 수 없는 인간 에너지를 소비한다. 그러한 조건에서 걷는 것은 생산적 능력을 소모하는 피할 수 없는 부담이다. 그러나 북미와 서유럽에서는 태도와 정책이 정반대이다: 걷기는 효율적이고, 건강하며, 자연스럽다. 우리는 그것을 더 많이 해야 한다 — 거의 모든 사람이 동의한다 — 그리고 현재의 추세 중 일부는 역전되어야 한다. 아이러니하게도, 헬스클럽과 가정에서 가장 인기 있는 운동 기기 중에는 걷기를 시뮬레이션하는 트레드밀이 있는데, 이는 길거리에서 교통 목적으로 달성될 수 있는 것이다.</div>
+
+    <div class="grammar-note" style="border-left: 4px solid var(--v-text); background: var(--v-bg); border-color: var(--v-text);">
+      <strong>❌ 어휘 오류 찾기</strong>
+      <ol style="margin-top:8px; padding-left:20px;">
+        <li>long — ✅ 올바름</li>
+        <li>consumes — ✅ 올바름</li>
+        <li><strong style="color:var(--v-text);">same — ❌ 오류!</strong></li>
+        <li>more — ✅ 올바름</li>
+        <li>accomplished — ✅ 올바름</li>
+      </ol>
+      <details>
+        <summary style="color: var(--v-text); margin-top:8px;">🔑 정답 보기</summary>
+        <p style="margin-top:6px;"><strong>정답: ③</strong> — 개발도상국(걷기를 부담으로 여김)과 북미/유럽(걷기를 긍정적으로 여김)의 태도가 대조되므로 <code>same</code>이 아니라 <code>opposite</code>(또는 different)이 문맥상 적절하다.</p>
+      </details>
+    </div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-c">보어 (C)</th></tr>
+        <tr><td>주절</td><td class="cell-s">The main mode</td><td class="cell-v">continues to be</td><td class="cell-c">walking</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;because of the constraints on resources...&gt;</strong>: 주절 수식 · <strong>부사구</strong> (전치사구)</li>
+          <li><strong>[that are required to run an extensive public transportation system]</strong>: resources 수식 · <strong>형용사절</strong> (주격 관계대명사 that)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 3형식 (S + V + O) / 주절 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">People</td>
+          <td class="cell-v">cover</td>
+          <td class="cell-o">long distances</td>
+        </tr>
+        <tr>
+          <td class="cell-s">(People)</td>
+          <td class="cell-v">expend</td>
+          <td class="cell-o">human energy</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;on foot&gt;</strong>: 동사(cover) 수식 · <strong>부사구</strong></li>
+          <li><strong>&lt;every day&gt;</strong>: 동사(cover) 수식 · <strong>부사구</strong></li>
+          <li><strong>[that they can hardly spare]</strong>: energy 수식 · <strong>형용사절</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 목적격 관계대명사 that, 병렬 구조
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Walking</td>
+          <td class="cell-v">is</td>
+          <td class="cell-o">an unavoidable burden</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;under those conditions&gt;</strong>: Walking 수식 · <strong>형용사구(또는 부사구)</strong></li>
+          <li><strong>[that consumes productive capability]</strong>: burden 수식 · <strong>형용사절</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 동명사 주어, 주격 관계대명사 that
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">the attitude and policies</td>
+          <td class="cell-v">are</td>
+          <td class="cell-o">just the opposite</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;In North America and Western Europe&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 콜론(:)을 통한 부연 설명
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 3형식 (S + V + O) / 주절 2 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">We</td>
+          <td class="cell-v">should do</td>
+          <td class="cell-o">more of it</td>
+        </tr>
+        <tr>
+          <td class="cell-s">some of the current trends</td>
+          <td class="cell-v">should be reversed</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>— almost everybody agrees —</strong>: 문장 중간 · <strong>삽입절</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 조동사 수동태 (should be reversed)
+      </div>
+
+      <h3 class="section-title">문장 6 (도치구문)</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V [장소 부사구 도치])</caption>
+        <tr><th>구분</th><th class="th-m">부사구 (M)</th><th class="th-v">동사 (V)</th><th class="th-s">주어 (S)</th></tr>
+        <tr><td>주절</td><td class="cell-m">among the most popular...</td><td class="cell-v">are</td><td class="cell-s">treadmills</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[which simulate walking]</strong>: treadmills 수식 · <strong>형용사절</strong> (주격 관계대명사 계속적 용법)</li>
+          <li><strong>=something [that could be accomplished...]=</strong>: walking과 <strong>동격</strong>
+            <ul><li>[that could be accomplished...]: something 수식 · <strong>형용사절</strong></li></ul>
+          </li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong>
+        <ul>
+          <li><strong>도치구문:</strong> 장소/위치 부사구(among...)가 문두에 와서 주어(treadmills)와 동사(are)가 도치됨</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th></tr>
+        <tr><td class="word-en">accomplish</td><td class="pos">동사</td><td>성취하다, 달성하다</td></tr>
+        <tr><td class="word-en">afford</td><td class="pos">동사</td><td>~할 여유가 있다</td></tr>
+        <tr><td class="word-en">attitude</td><td class="pos">명사</td><td>태도</td></tr>
+        <tr><td class="word-en">burden</td><td class="pos">명사</td><td>짐, 부담</td></tr>
+        <tr><td class="word-en">capacity</td><td class="pos">명사</td><td>능력, 용량</td></tr>
+        <tr><td class="word-en">constraint</td><td class="pos">명사</td><td>제약, 제한</td></tr>
+        <tr><td class="word-en">consume</td><td class="pos">동사</td><td>소비하다</td></tr>
+        <tr><td class="word-en">efficient</td><td class="pos">형용사</td><td>효율적인</td></tr>
+        <tr><td class="word-en">extensive</td><td class="pos">형용사</td><td>광범위한, 넓은</td></tr>
+        <tr><td class="word-en">mode</td><td class="pos">명사</td><td>방식, 방법</td></tr>
+        <tr><td class="word-en">opposite</td><td class="pos">형용사</td><td>정반대의</td></tr>
+        <tr><td class="word-en">policy</td><td class="pos">명사</td><td>정책</td></tr>
+        <tr><td class="word-en">productive</td><td class="pos">형용사</td><td>생산적인</td></tr>
+        <tr><td class="word-en">purpose</td><td class="pos">명사</td><td>목적</td></tr>
+        <tr><td class="word-en">reverse</td><td class="pos">동사</td><td>뒤집다, 역전시키다</td></tr>
+        <tr><td class="word-en">simulate</td><td class="pos">동사</td><td>모의실험하다, 가장하다</td></tr>
+        <tr><td class="word-en">spare</td><td class="pos">동사</td><td>할애하다, 남기다</td></tr>
+        <tr><td class="word-en">treadmill</td><td class="pos">명사</td><td>러닝머신</td></tr>
+        <tr><td class="word-en">unavoidable</td><td class="pos">형용사</td><td>피할 수 없는</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 34번 지문 -->
+<section class="sentence-card" id="s6">
+  <div class="sentence-num">34번 <span class="badge">동명사 · 관계대명사 · 목적격보어 · 양보 구조</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="c-s">An emphasis <span class="m-adj-p">[on learning from the ingroup]</span></span> <span class="c-v">leaves</span> <span class="c-o">little room</span> <span class="m-adv-p">&lt;for the individual&gt;</span>.
+      <span class="m-adv-p">&lt;Surprisingly&gt;</span>, <span class="c-s">we</span> <span class="c-v">can dislike</span> <span class="c-o">some people <span class="m-adj-p">[in our ingroup]</span></span> <span class="conj">but</span> <span class="m-adv-p">&lt;still&gt;</span> <span class="c-v">imitate</span> <span class="c-o">them</span>.
+      <span class="c-s">Wilks, Kirby, and Nielsen</span> <span class="c-v">studied</span> <span class="c-o">imitating behavior</span> <span class="m-adv-p">&lt;in the context <span class="m-adj-p">[of observing <span class="noun-c">[how to open a puzzle box]</span>]</span>&gt;</span>.
+      <span class="c-s">Ingroups and outgroups</span> <span class="c-v">were defined</span> <span class="m-adv-p">&lt;in a minimal way&gt;</span> <span class="m-part">(using simple color coding of wristbands)</span>.
+      <span class="c-s">Children</span> <span class="c-v">did not <span class="m-adv-p">&lt;simply&gt;</span> like</span> <span class="c-o">all members <span class="m-adj-p">[of their ingroup]</span></span>; <span class="c-s">they</span> <span class="c-v">disliked</span> <span class="c-o">those <span class="m-adj-c">[who behaved antisocially]</span></span>.
+      <span class="m-adv-p">&lt;In fact&gt;</span>, <span class="c-s">they</span> <span class="c-v">disliked</span> <span class="c-o">these antisocial ingroup members</span> <span class="m-adv-p">&lt;more than prosocial members of the outgroup&gt;</span>.
+      <span class="m-adv-p">&lt;Even so&gt;</span>, <span class="c-s">their dislike</span> <span class="c-v">did not impact</span> <span class="c-o">their tendency <span class="m-adj-p">[to imitate the ingroup behavior more so than the outgroup behavior]</span></span>.
+      <span class="c-s">This overimitation</span> <span class="c-v">demonstrates</span> <span class="c-o"><span class="noun-c">[that we are not <span class="m-adv-p">&lt;just&gt;</span> imitating <span class="m-adv-p">&lt;to learn the most efficient way <span class="m-adj-p">[to open the box]</span>&gt;</span>]</span></span>.
+      <span class="c-s">We</span> <span class="c-v">want</span> <span class="c-o">to learn <span class="noun-c">[how to do it <span class="m-adv-p">&lt;in the appropriate way&gt;</span>]</span></span> — that is, <span class="c-s" style="background:rgba(255,255,0,0.3); border-bottom:2px solid #eab308; padding:2px 4px;">conforming to the rules and conventions of the ingroup</span>.
+      <span class="c-s">This</span> <span class="c-v">would be <span class="m-adv-p">&lt;adequately&gt;</span> demonstrated</span> <span class="m-adv-p">&lt;even by an antisocial ingroup member&gt;</span>.
+    </div>
+    <div class="translation">🇰🇷 내집단으로부터 배우는 것에 대한 강조는 개인을 거의 고려하지 않는다. 놀랍게도, 우리는 내집단의 몇몇 사람들을 싫어할 수 있지만, 여전히 그들을 모방한다. Wilks, Kirby, Nielsen은 퍼즐 상자를 여는 방법을 관찰하는 맥락에서 모방 행동을 연구했다. 내집단과 외집단은 손목밴드의 단순한 색상 코딩을 사용하여 최소한의 방법으로 구분되었다. 아이들은 내집단의 모든 멤버를 단순히 좋아하지는 않았다; 그들은 반사회적으로 행동하는 사람들을 싫어했다. 실제로, 그들은 이러한 반사회적 내집단 멤버를 외집단의 친사회적 멤버보다 더 싫어했다. 그럼에도 불구하고, 그들의 불호감은 내집단 행동을 외집단 행동보다 더 많이 모방하려는 경향에 영향을 미치지 않았다. 이러한 과장모방은 우리가 상자를 가장 효율적으로 여는 방법을 배우기 위해 모방하는 것이 아니라는 것을 보여준다. 우리는 적절한 방식으로 하는 방법을 배우고 싶어한다 — 즉, 내집단의 규칙과 관습에 순응하는 것이다. 이것은 반사회적 내집단 멤버에 의해서도 적절히 입증될 것이다.</div>
+
+    <div class="grammar-note" style="border-left: 4px solid var(--tip-text); background: var(--tip-bg); border-color: var(--tip-border);">
+      <strong>❌ 밑줄 친 부분이 의미하는 바로 가장 적절한 것은?</strong>
+      <ol style="margin-top:8px; padding-left:20px;">
+        <li><strong style="color:var(--tip-text);">conforming to the rules and conventions of the ingroup</strong></li>
+        <li>following outgroup behavior which is socially appropriate</li>
+        <li>avoiding behaviors demonstrated by the ingroup on purpose</li>
+        <li>pursuing the most efficient strategy for completing the task</li>
+        <li>maintaining an individual identity rather than a group identity</li>
+      </ol>
+      <details>
+        <summary style="color: var(--tip-text); margin-top:8px;">🔑 정답 보기</summary>
+        <p style="margin-top:6px;"><strong>정답: ①</strong> — 사람들은 상자 여는 '효율적인 방법'이 아니라, 내집단의 '적절한 방식(규칙, 관습)'을 따르기 위해 비호감 멤버의 행동까지 모방한다는 내용이다.</p>
+      </details>
+    </div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">The emphasis</td>
+          <td class="cell-v">takes</td>
+          <td class="cell-o">little account</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[on learning from the ingroup]</strong>: emphasis 수식 · <strong>형용사구</strong></li>
+          <li><strong>&lt;of individuals&gt;</strong>: account 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> take account of (~을 고려하다) 숙어 표현
+      </div>
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">we</td>
+          <td class="cell-v">copy</td>
+          <td class="cell-o">them</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;Amazingly&gt;</strong>: 주절 수식 · <strong>부사</strong></li>
+          <li><strong>&lt;while we may dislike some of the people in our ingroup&gt;</strong>: 주절 수식 · <strong>부사절</strong></li>
+          <li><strong>&lt;still&gt;</strong>: 동사(copy) 수식 · <strong>부사</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 양보의 부사절 while (~임에도 불구하고)
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Wilks, Kirby, and Nielsen</td>
+          <td class="cell-v">studied</td>
+          <td class="cell-o">copying behavior</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;in the context of observing...&gt;</strong>: 동사(studied) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 의문사 + to부정사 (how to open)
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Ingroups and outgroups</td>
+          <td class="cell-v">were distinguished</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;in a minimal way&gt;</strong>: 동사(were distinguished) 수식 · <strong>부사구</strong></li>
+          <li><strong>(using simple color coding of wristbands)</strong>: 주절 수식 · <strong>분사구문</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 수동태, 분사구문
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 1 — 3형식 (S + V + O) / 주절 2 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">The children</td>
+          <td class="cell-v">did not like</td>
+          <td class="cell-o">all members of their ingroup</td>
+        </tr>
+        <tr>
+          <td class="cell-s">they</td>
+          <td class="cell-v">disliked</td>
+          <td class="cell-o">those</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;simply&gt;</strong>: 동사(like) 수식 · <strong>부사</strong></li>
+          <li><strong>[who behaved in an antisocial fashion]</strong>: those 수식 · <strong>형용사절</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 주격 관계대명사 who
+      </div>
+
+      <h3 class="section-title">문장 6</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">they</td>
+          <td class="cell-v">liked</td>
+          <td class="cell-o">these antisocial ingroup members</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;Indeed&gt;</strong>: 주절 수식 · <strong>부사</strong></li>
+          <li><strong>&lt;less than the prosocial members of an outgroup&gt;</strong>: 동사(liked) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 비교구문 (less than)
+      </div>
+
+      <h3 class="section-title">문장 7</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-o">목적어 (O)</th></tr>
+        <tr><td>주절</td><td class="cell-s">their dislike</td><td class="cell-v">did not impact</td><td class="cell-o">their tendency</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[to imitate the ingroup behavior more so than the outgroup behavior]</strong>: tendency 수식 · <strong>형용사구</strong> (to부정사)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 8</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-o">목적어 (O)</th></tr>
+        <tr><td>주절</td><td class="cell-s">This overimitation</td><td class="cell-v">demonstrates</td><td class="cell-o">[that we are not just imitating...]</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[that we are not just imitating...]</strong>: demonstrates의 목적어 · <strong>명사절</strong> (접속사 that)
+            <ul>
+              <li><strong>&lt;to learn the most efficient way...&gt;</strong>: 목적어절 내부 동사(imitating) 수식 · <strong>부사구</strong> (to부정사, 목적)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h3 class="section-title">문장 9</h3>
+      <table class="analysis-table">
+        <caption>주절 — 3형식 (S + V + O)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">We</td>
+          <td class="cell-v">want</td>
+          <td class="cell-o">to learn how to do it in the proper way</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>(conforming to the rules and conventions of the ingroup)</strong>: 부연설명 · <strong>동격/분사구문</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> want + to부정사 목적어, 의문사 + to부정사
+      </div>
+
+      <h3 class="section-title">문장 10</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">This</td>
+          <td class="cell-v">will be demonstrated</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;appropriately&gt;</strong>: 동사 수식 · <strong>부사</strong></li>
+          <li><strong>&lt;even by antisocial ingroup members&gt;</strong>: 동사 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 조동사 미래 수동태 (will be pp)
+      </div>
+
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th></tr>
+        <tr><td class="word-en">adequately</td><td class="pos">부사</td><td>적절히, 충분히</td></tr>
+        <tr><td class="word-en">antisocially</td><td class="pos">부사</td><td>반사회적으로</td></tr>
+        <tr><td class="word-en">appropriate</td><td class="pos">형용사</td><td>적절한</td></tr>
+        <tr><td class="word-en">conform to</td><td class="pos">동사구</td><td>~에 순응하다, 따르다</td></tr>
+        <tr><td class="word-en">convention</td><td class="pos">명사</td><td>관습</td></tr>
+        <tr><td class="word-en">define</td><td class="pos">동사</td><td>정의하다, 규정하다</td></tr>
+        <tr><td class="word-en">demonstrate</td><td class="pos">동사</td><td>보여주다, 입증하다</td></tr>
+        <tr><td class="word-en">efficient</td><td class="pos">형용사</td><td>효율적인</td></tr>
+        <tr><td class="word-en">emphasis</td><td class="pos">명사</td><td>강조</td></tr>
+        <tr><td class="word-en">identity</td><td class="pos">명사</td><td>정체성</td></tr>
+        <tr><td class="word-en">imitate</td><td class="pos">동사</td><td>모방하다</td></tr>
+        <tr><td class="word-en">impact</td><td class="pos">동사</td><td>영향을 미치다</td></tr>
+        <tr><td class="word-en">ingroup</td><td class="pos">명사</td><td>내집단</td></tr>
+        <tr><td class="word-en">minimal</td><td class="pos">형용사</td><td>최소한의</td></tr>
+        <tr><td class="word-en">observe</td><td class="pos">동사</td><td>관찰하다</td></tr>
+        <tr><td class="word-en">outgroup</td><td class="pos">명사</td><td>외집단</td></tr>
+        <tr><td class="word-en">overimitation</td><td class="pos">명사</td><td>과장모방</td></tr>
+        <tr><td class="word-en">prosocial</td><td class="pos">형용사</td><td>친사회적인</td></tr>
+        <tr><td class="word-en">pursue</td><td class="pos">동사</td><td>추구하다</td></tr>
+        <tr><td class="word-en">strategy</td><td class="pos">명사</td><td>전략</td></tr>
+        <tr><td class="word-en">tendency</td><td class="pos">명사</td><td>경향</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 36번 지문 -->
+<section class="sentence-card" id="s7">
+  <div class="sentence-num">36번 <span class="badge">주어-동사 · 관계대명사 · 문장 삽입 · 담론 구조</span></div>
+  <div class="sentence-body">
+    <div class="original-text">
+      <span class="m-adv-c">&lt;As Kuhn suggested&gt;</span>, <span class="c-s">our propositions <span class="m-adj-p">[about the world]</span></span> <span class="c-v">are embedded</span> <span class="m-adv-p">&lt;within a paradigm, roughly a network <span class="m-adj-p">[of interrelated commitments to a particular theory, conception of a subject matter, and methodological practices]</span>&gt;</span>.
+      <span style="color:var(--accent); font-weight:700;">( ① )</span> <span class="m-adv-p">&lt;Thus&gt;</span>, <span class="m-adv-c">&lt;when scientists conduct research&gt;</span>, <span class="c-s">they</span> <span class="c-v">do</span> <span class="c-o">so</span> <span class="m-adv-p">&lt;within a particular paradigm&gt;</span>.
+      <span style="color:var(--accent); font-weight:700;">( ② )</span> <span class="c-s">Even the most precise measurements</span> <span class="c-v">make</span> <span class="c-o">sense</span> <span class="m-adv-p">&lt;only within that paradigm&gt;</span>.
+      <span style="color:var(--accent); font-weight:700;">( ③ )</span> <span class="c-s">Looking through a microscope, for example,</span> <span class="c-v">tells</span> <span class="c-io">you</span> <span class="c-do">nothing</span> <span class="m-adv-c">&lt;unless you already know the nature of the instrument and <span class="noun-c">[what you are supposed to see]</span>&gt;</span>.
+      <span style="color:var(--accent); font-weight:700;">( ④ )</span> <span class="m-adv-p">&lt;Thus&gt;</span>, <span class="c-s"><span class="noun-c">[what we call major progress in science]</span></span> <span class="c-v">is</span> <span class="c-c">not a movement <span class="m-adj-p">[from a less to a more accurate paradigm]</span></span>.
+      <span class="m-adv-p">&lt;Rather&gt;</span>, <span class="c-s">it</span> <span class="c-v">is</span> <span class="c-c">a horizontal shift <span class="m-adj-p">[from one 'way of seeing the world' to another]</span></span>.
+      <span style="color:var(--accent); font-weight:700;">( ⑤ )</span> <span class="m-adv-p">&lt;For Kuhn&gt;</span>, <span class="c-s">'a scientist <span class="m-adj-p">[with a new paradigm]</span>'</span> <span class="c-v">sees</span> <span class="m-adv-p">&lt;differently from the way <span class="m-adj-c">[(that) he had seen before]</span>&gt;</span>.
+    </div>
+    <div class="translation">🇰🇷 Kuhn이 제안했듯이, 세계에 대한 우리의 명제들은 패러다임 안에 내재되어 있는데, 대략 특정 이론, 주제에 대한 개념, 방법론적 실천에 대한 상호 연관된 헌신의 네트워크이다. (①) 따라서, 과학자들이 연구를 수행할 때, 그들은 특정 패러다임 내에서 그렇게 한다. (②) 가장 정밀한 측정조차 그 패러다임 안에서만 의미가 있다. (③) 예를 들어, 현미경을 들여다보는 것은 기기의 특성과 무엇을 봐야 하는지 이미 알고 있지 않으면 아무것도 알려주지 않는다. (④) 따라서, 우리가 과학의 주요 진보라고 부르는 것은 덜 정확한 패러다임에서 더 정확한 패러다임으로의 이동이 아니다. 오히려, 그것은 하나의 '세계를 보는 방식'에서 다른 방식으로의 수평적 이동이다. (⑤) Kuhn에게 있어, '새로운 패러다임을 가진 과학자는 이전에 보았던 방식과 다르게 본다.'</div>
+
+    <div class="grammar-note" style="border-left: 4px solid var(--tip-text); background: var(--tip-bg); border-color: var(--tip-border);">
+      <strong>📌 문장 삽입 문제</strong>
+      <p style="margin-top:8px; padding:10px; background:var(--card-inner); border-radius:8px; font-style:italic;">
+        "Thus, what we call major progress in science is not a movement from a less to a more accurate paradigm."
+      </p>
+      <p style="margin-top:6px; font-size:0.9em;">위 문장이 들어가기에 가장 적절한 곳은? (①~⑤)</p>
+      <details>
+        <summary style="color: var(--tip-text); margin-top:8px;">🔑 정답 보기</summary>
+        <p style="margin-top:6px;"><strong>정답: ④</strong> — 삽입 문장의 "not a movement"과 다음 문장의 "Rather, it is a horizontal shift"가 대조 구조를 이루며, ④ 앞의 현미경 예시로 패러다임 의존성을 설명한 후 결론을 도출하는 흐름이 자연스럽다.</p>
+      </details>
+    </div>
+
+    <details open>
+      <summary>📐 문장 구조 분석 펼치기</summary>
+      
+      <h3 class="section-title">문장 1</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">our propositions</td>
+          <td class="cell-v">are embedded</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;As Kuhn proposed&gt;</strong>: 주절 수식 · <strong>부사절</strong></li>
+          <li><strong>[about the world]</strong>: propositions 수식 · <strong>형용사구</strong></li>
+          <li><strong>&lt;within paradigms&gt;</strong>: 동사(are embedded) 수식 · <strong>부사구</strong></li>
+          <li><strong>=roughly a network... practices=</strong>: paradigms 부연설명 · <strong>동격</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 부사절 as (~처럼), 동격의 명사구 나열
+      </div>
+
+      <h3 class="section-title">문장 2</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">they</td>
+          <td class="cell-v">do</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;Thus&gt;</strong>: 주절 수식 · <strong>접속부사</strong></li>
+          <li><strong>&lt;when scientists undertake research&gt;</strong>: 주절 수식 · <strong>부사절</strong></li>
+          <li><strong>&lt;so&gt;</strong>: 동사(do) 수식 · <strong>부사(대동사구)</strong></li>
+          <li><strong>&lt;from within a specific paradigm&gt;</strong>: 동사(do) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 대동사 do, 이중 전치사 (from within)
+      </div>
+
+      <h3 class="section-title">문장 3</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">Even the most exacting measurements</td>
+          <td class="cell-v">are</td>
+          <td class="cell-o">sensible</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;only&gt;</strong>: 동사 수식 · <strong>부사</strong></li>
+          <li><strong>&lt;from within that paradigm&gt;</strong>: 보어(sensible) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> 최상급 형용사, 이중 전치사
+      </div>
+
+      <h3 class="section-title">문장 4</h3>
+      <table class="analysis-table">
+        <caption>주절 — 4형식 (S + V + IO + DO)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-c">간접목적어 (IO)</th><th class="th-o">직접목적어 (DO)</th></tr>
+        <tr><td>주절</td><td class="cell-s">Looking through a microscope</td><td class="cell-v">tells</td><td class="cell-c">you</td><td class="cell-o">nothing</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;unless you already know...&gt;</strong>: 주절 수식 · <strong>부사절</strong> (조건)</li>
+          <li><strong>[what you are supposed to see]</strong>: know의 목적어 일부 · <strong>명사절</strong> (관계대명사 what)</li>
+        </ul>
+      </div>
+
+      <h3 class="section-title">문장 5</h3>
+      <table class="analysis-table">
+        <caption>주절 — 2형식 (S + V + C)</caption>
+        <tr><th>구분</th><th class="th-s">주어 (S)</th><th class="th-v">동사 (V)</th><th class="th-c">보어 (C)</th></tr>
+        <tr><td>주절</td><td class="cell-s">[what we call major progress in science]</td><td class="cell-v">is</td><td class="cell-c">not a movement</td></tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>[what we call major progress in science]</strong>: 주어 역할 · <strong>명사절</strong> (관계대명사 what)</li>
+          <li><strong>[from a less to a more accurate paradigm]</strong>: movement 수식 · <strong>형용사구</strong> (전치사구)</li>
+        </ul>
+      </div>
+      <h3 class="section-title">문장 6</h3>
+      <table class="analysis-table">
+        <caption>주절 — 1형식 (S + V)</caption>
+        <tr>
+          <th class="th-s">핵심 주어 (S)</th>
+          <th class="th-v">핵심 동사 (V)</th>
+          <th class="th-o">핵심 목적어/보어</th>
+        </tr>
+        <tr>
+          <td class="cell-s">the scientist</td>
+          <td class="cell-v">sees</td>
+          <td class="cell-o">-</td>
+        </tr>
+      </table>
+      <div class="modifier-analysis">
+        <ul>
+          <li><strong>&lt;For Kuhn&gt;</strong>: 주절 수식 · <strong>부사구</strong></li>
+          <li><strong>[with a new paradigm]</strong>: scientist 수식 · <strong>형용사구</strong></li>
+          <li><strong>&lt;differently from the way [he had seen before]&gt;</strong>: 동사(sees) 수식 · <strong>부사구</strong></li>
+        </ul>
+      </div>
+      <div class="grammar-note">
+        <strong>💡 핵심 문법:</strong> the way (how 생략) 관계부사절, 과거완료 (had seen)
+      </div>
+
+    </details>
+
+    <details>
+      <summary>📚 단어장 펼치기</summary>
+      <table class="vocab-table">
+        <tr><th>단어</th><th>품사</th><th>뜻</th></tr>
+        <tr><td class="word-en">accurate</td><td class="pos">형용사</td><td>정확한</td></tr>
+        <tr><td class="word-en">commitment</td><td class="pos">명사</td><td>헌신, 전념</td></tr>
+        <tr><td class="word-en">conception</td><td class="pos">명사</td><td>개념, 구상</td></tr>
+        <tr><td class="word-en">conduct</td><td class="pos">동사</td><td>수행하다</td></tr>
+        <tr><td class="word-en">differently</td><td class="pos">부사</td><td>다르게</td></tr>
+        <tr><td class="word-en">embed</td><td class="pos">동사</td><td>내재시키다, 박아 넣다</td></tr>
+        <tr><td class="word-en">horizontal</td><td class="pos">형용사</td><td>수평적인</td></tr>
+        <tr><td class="word-en">instrument</td><td class="pos">명사</td><td>기구, 도구</td></tr>
+        <tr><td class="word-en">interrelated</td><td class="pos">형용사</td><td>상호 연관된</td></tr>
+        <tr><td class="word-en">make sense</td><td class="pos">동사구</td><td>의미가 통하다, 타당하다</td></tr>
+        <tr><td class="word-en">measurement</td><td class="pos">명사</td><td>측정</td></tr>
+        <tr><td class="word-en">methodological</td><td class="pos">형용사</td><td>방법론적인</td></tr>
+        <tr><td class="word-en">microscope</td><td class="pos">명사</td><td>현미경</td></tr>
+        <tr><td class="word-en">movement</td><td class="pos">명사</td><td>이동, 움직임</td></tr>
+        <tr><td class="word-en">nature</td><td class="pos">명사</td><td>본질, 특성</td></tr>
+        <tr><td class="word-en">paradigm</td><td class="pos">명사</td><td>패러다임, 인식 체계</td></tr>
+        <tr><td class="word-en">particular</td><td class="pos">형용사</td><td>특정한</td></tr>
+        <tr><td class="word-en">precise</td><td class="pos">형용사</td><td>정밀한, 정확한</td></tr>
+        <tr><td class="word-en">progress</td><td class="pos">명사</td><td>진보, 발전</td></tr>
+        <tr><td class="word-en">proposition</td><td class="pos">명사</td><td>명제, 제안</td></tr>
+        <tr><td class="word-en">roughly</td><td class="pos">부사</td><td>대략</td></tr>
+        <tr><td class="word-en">shift</td><td class="pos">명사</td><td>이동, 변화</td></tr>
+        <tr><td class="word-en">subject matter</td><td class="pos">명사</td><td>주제, 소재</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- 전체 단어장 -->
+<section class="sentence-card" id="wordlist">
+  <div class="sentence-num">📚 전체 단어장 (21~36번 지문)</div>
+  <div class="sentence-body">
+    <table class="vocab-table">
+      <tr><th>단어</th><th>품사</th><th>뜻</th><th>등장 지문</th></tr>
+      <tr><td class="word-en">access</td><td class="pos">명사</td><td>접근</td><td>24번</td></tr>
+      <tr><td class="word-en">accomplish</td><td class="pos">동사</td><td>성취하다, 달성하다</td><td>30번</td></tr>
+      <tr><td class="word-en">accurate</td><td class="pos">형용사</td><td>정확한</td><td>29번, 36번</td></tr>
+      <tr><td class="word-en">adequately</td><td class="pos">부사</td><td>적절히, 충분히</td><td>34번</td></tr>
+      <tr><td class="word-en">afford</td><td class="pos">동사</td><td>~할 여유가 있다</td><td>30번</td></tr>
+      <tr><td class="word-en">ancestor</td><td class="pos">명사</td><td>조상</td><td>21번</td></tr>
+      <tr><td class="word-en">antisocially</td><td class="pos">부사</td><td>반사회적으로</td><td>34번</td></tr>
+      <tr><td class="word-en">appropriate</td><td class="pos">형용사</td><td>적절한</td><td>34번</td></tr>
+      <tr><td class="word-en">attach</td><td class="pos">동사</td><td>붙이다, 연결하다</td><td>24번</td></tr>
+      <tr><td class="word-en">attitude</td><td class="pos">명사</td><td>태도</td><td>30번</td></tr>
+      <tr><td class="word-en">award</td><td class="pos">명사</td><td>상</td><td>26번</td></tr>
+      <tr><td class="word-en">awesome</td><td class="pos">형용사</td><td>멋진, 굉장한</td><td>24번</td></tr>
+      <tr><td class="word-en">billion</td><td class="pos">명사</td><td>10억</td><td>21번</td></tr>
+      <tr><td class="word-en">break</td><td class="pos">동사</td><td>깨다, 끊다</td><td>24번</td></tr>
+      <tr><td class="word-en">bundling</td><td class="pos">명사</td><td>묶기, 번들링</td><td>24번</td></tr>
+      <tr><td class="word-en">burden</td><td class="pos">명사</td><td>짐, 부담</td><td>30번</td></tr>
+      <tr><td class="word-en">capacity</td><td class="pos">명사</td><td>능력, 용량</td><td>30번</td></tr>
+      <tr><td class="word-en">career</td><td class="pos">명사</td><td>경력, 직업</td><td>26번</td></tr>
+      <tr><td class="word-en">cloud</td><td class="pos">명사</td><td>클라우드 (온라인 저장 공간)</td><td>29번</td></tr>
+      <tr><td class="word-en">coherent</td><td class="pos">형용사</td><td>일관성 있는, 논리 정연한</td><td>29번</td></tr>
+      <tr><td class="word-en">combine</td><td class="pos">동사</td><td>결합하다</td><td>24번</td></tr>
+      <tr><td class="word-en">commitment</td><td class="pos">명사</td><td>헌신, 약속</td><td>26번, 36번</td></tr>
+      <tr><td class="word-en">conception</td><td class="pos">명사</td><td>개념, 구상</td><td>36번</td></tr>
+      <tr><td class="word-en">conceptual</td><td class="pos">형용사</td><td>개념적인</td><td>29번</td></tr>
+      <tr><td class="word-en">conceptualization</td><td class="pos">명사</td><td>개념화</td><td>29번</td></tr>
+      <tr><td class="word-en">concerto</td><td class="pos">명사</td><td>협주곡</td><td>26번</td></tr>
+      <tr><td class="word-en">conduct</td><td class="pos">동사</td><td>수행하다</td><td>36번</td></tr>
+      <tr><td class="word-en">conform to</td><td class="pos">동사구</td><td>~에 순응하다, 따르다</td><td>34번</td></tr>
+      <tr><td class="word-en">confusion</td><td class="pos">명사</td><td>혼란</td><td>29번</td></tr>
+      <tr><td class="word-en">consider</td><td class="pos">동사</td><td>고려하다</td><td>21번</td></tr>
+      <tr><td class="word-en">consist of</td><td class="pos">동사구</td><td>~로 구성되다</td><td>29번</td></tr>
+      <tr><td class="word-en">constraint</td><td class="pos">명사</td><td>제약, 제한</td><td>30번</td></tr>
+      <tr><td class="word-en">consume</td><td class="pos">동사</td><td>소비하다</td><td>30번</td></tr>
+      <tr><td class="word-en">convention</td><td class="pos">명사</td><td>관습, 대회</td><td>26번, 34번</td></tr>
+      <tr><td class="word-en">decade</td><td class="pos">명사</td><td>10년</td><td>21번</td></tr>
+      <tr><td class="word-en">define</td><td class="pos">동사</td><td>정의하다, 규정하다</td><td>34번</td></tr>
+      <tr><td class="word-en">demonstrate</td><td class="pos">동사</td><td>보여주다, 입증하다</td><td>34번</td></tr>
+      <tr><td class="word-en">descendant</td><td class="pos">명사</td><td>후손</td><td>21번</td></tr>
+      <tr><td class="word-en">description</td><td class="pos">명사</td><td>묘사, 설명</td><td>29번</td></tr>
+      <tr><td class="word-en">device</td><td class="pos">명사</td><td>기기, 장치</td><td>24번</td></tr>
+      <tr><td class="word-en">differently</td><td class="pos">부사</td><td>다르게</td><td>36번</td></tr>
+      <tr><td class="word-en">display</td><td class="pos">동사</td><td>표시하다, 보여주다</td><td>29번</td></tr>
+      <tr><td class="word-en">distant</td><td class="pos">형용사</td><td>먼, 멀리 떨어진</td><td>29번</td></tr>
+      <tr><td class="word-en">effective</td><td class="pos">형용사</td><td>효과적인</td><td>29번</td></tr>
+      <tr><td class="word-en">efficient</td><td class="pos">형용사</td><td>효율적인</td><td>30번, 34번</td></tr>
+      <tr><td class="word-en">embed</td><td class="pos">동사</td><td>내재시키다, 박아 넣다</td><td>36번</td></tr>
+      <tr><td class="word-en">embodied</td><td class="pos">과거분사</td><td>육체를 가진</td><td>21번</td></tr>
+      <tr><td class="word-en">emphasis</td><td class="pos">명사</td><td>강조</td><td>34번</td></tr>
+      <tr><td class="word-en">essential</td><td class="pos">형용사</td><td>필수적인</td><td>24번</td></tr>
+      <tr><td class="word-en">explanation</td><td class="pos">명사</td><td>설명</td><td>29번</td></tr>
+      <tr><td class="word-en">extensive</td><td class="pos">형용사</td><td>광범위한, 넓은</td><td>30번</td></tr>
+      <tr><td class="word-en">faculty</td><td class="pos">명사</td><td>교수진, 능력</td><td>26번</td></tr>
+      <tr><td class="word-en">far-reaching</td><td class="pos">형용사</td><td>광범위한</td><td>21번</td></tr>
+      <tr><td class="word-en">focus on</td><td class="pos">동사구</td><td>~에 집중하다</td><td>26번</td></tr>
+      <tr><td class="word-en">forced</td><td class="pos">과거분사</td><td>강요된</td><td>24번</td></tr>
+      <tr><td class="word-en">foundation</td><td class="pos">명사</td><td>기초, 토대</td><td>26번</td></tr>
+      <tr><td class="word-en">generation</td><td class="pos">명사</td><td>세대</td><td>21번</td></tr>
+      <tr><td class="word-en">genetic</td><td class="pos">형용사</td><td>유전적인</td><td>21번</td></tr>
+      <tr><td class="word-en">grander</td><td class="pos">형용사</td><td>더 위대한</td><td>21번</td></tr>
+      <tr><td class="word-en">habit</td><td class="pos">명사</td><td>습관</td><td>24번</td></tr>
+      <tr><td class="word-en">horizontal</td><td class="pos">형용사</td><td>수평적인</td><td>36번</td></tr>
+      <tr><td class="word-en">hostage</td><td class="pos">명사</td><td>인질</td><td>24번</td></tr>
+      <tr><td class="word-en">identity</td><td class="pos">명사</td><td>정체성</td><td>34번</td></tr>
+      <tr><td class="word-en">imitate</td><td class="pos">동사</td><td>모방하다</td><td>34번</td></tr>
+      <tr><td class="word-en">impact</td><td class="pos">명사</td><td>영향, 충격</td><td>21번, 34번</td></tr>
+      <tr><td class="word-en">influencer</td><td class="pos">명사</td><td>영향력 있는 사람</td><td>21번</td></tr>
+      <tr><td class="word-en">ingroup</td><td class="pos">명사</td><td>내집단</td><td>34번</td></tr>
+      <tr><td class="word-en">inspire</td><td class="pos">동사</td><td>영감을 주다</td><td>26번</td></tr>
+      <tr><td class="word-en">institute</td><td class="pos">명사</td><td>기관, 협회</td><td>26번</td></tr>
+      <tr><td class="word-en">instruct</td><td class="pos">동사</td><td>가르치다, 지시하다</td><td>21번</td></tr>
+      <tr><td class="word-en">instrument</td><td class="pos">명사</td><td>기구, 도구</td><td>36번</td></tr>
+      <tr><td class="word-en">interrelated</td><td class="pos">형용사</td><td>상호 연관된</td><td>36번</td></tr>
+      <tr><td class="word-en">lifelong</td><td class="pos">형용사</td><td>평생의</td><td>26번</td></tr>
+      <tr><td class="word-en">likely</td><td class="pos">형용사</td><td>~할 가능성이 있는</td><td>24번</td></tr>
+      <tr><td class="word-en">linked</td><td class="pos">과거분사</td><td>연결된</td><td>21번</td></tr>
+      <tr><td class="word-en">make sense</td><td class="pos">동사구</td><td>의미가 통하다, 타당하다</td><td>36번</td></tr>
+      <tr><td class="word-en">material</td><td class="pos">명사</td><td>자료, 물질</td><td>29번</td></tr>
+      <tr><td class="word-en">measurement</td><td class="pos">명사</td><td>측정</td><td>36번</td></tr>
+      <tr><td class="word-en">methodological</td><td class="pos">형용사</td><td>방법론적인</td><td>36번</td></tr>
+      <tr><td class="word-en">microscope</td><td class="pos">명사</td><td>현미경</td><td>36번</td></tr>
+      <tr><td class="word-en">minimal</td><td class="pos">형용사</td><td>최소한의</td><td>34번</td></tr>
+      <tr><td class="word-en">mode</td><td class="pos">명사</td><td>방식, 방법</td><td>30번</td></tr>
+      <tr><td class="word-en">movement</td><td class="pos">명사</td><td>이동, 움직임</td><td>36번</td></tr>
+      <tr><td class="word-en">nature</td><td class="pos">명사</td><td>본질, 특성</td><td>36번</td></tr>
+      <tr><td class="word-en">networked</td><td class="pos">과거분사</td><td>네트워크화된</td><td>21번</td></tr>
+      <tr><td class="word-en">observe</td><td class="pos">동사</td><td>관찰하다</td><td>34번</td></tr>
+      <tr><td class="word-en">opposite</td><td class="pos">형용사</td><td>정반대의</td><td>30번</td></tr>
+      <tr><td class="word-en">opt</td><td class="pos">동사</td><td>선택하다</td><td>24번</td></tr>
+      <tr><td class="word-en">otherwise</td><td class="pos">부사</td><td>그렇지 않으면</td><td>24번</td></tr>
+      <tr><td class="word-en">outgroup</td><td class="pos">명사</td><td>외집단</td><td>34번</td></tr>
+      <tr><td class="word-en">outstanding</td><td class="pos">형용사</td><td>뛰어난, 눈에 띄는</td><td>26번</td></tr>
+      <tr><td class="word-en">overimitation</td><td class="pos">명사</td><td>과장모방</td><td>34번</td></tr>
+      <tr><td class="word-en">paradigm</td><td class="pos">명사</td><td>패러다임, 인식 체계</td><td>36번</td></tr>
+      <tr><td class="word-en">participant</td><td class="pos">명사</td><td>참가자</td><td>24번</td></tr>
+      <tr><td class="word-en">particular</td><td class="pos">형용사</td><td>특정한</td><td>36번</td></tr>
+      <tr><td class="word-en">percent</td><td class="pos">명사</td><td>퍼센트</td><td>24번</td></tr>
+      <tr><td class="word-en">policy</td><td class="pos">명사</td><td>정책</td><td>30번</td></tr>
+      <tr><td class="word-en">precious</td><td class="pos">형용사</td><td>소중한, 귀중한</td><td>21번</td></tr>
+      <tr><td class="word-en">precise</td><td class="pos">형용사</td><td>정밀한, 정확한</td><td>36번</td></tr>
+      <tr><td class="word-en">productive</td><td class="pos">형용사</td><td>생산적인</td><td>30번</td></tr>
+      <tr><td class="word-en">progress</td><td class="pos">명사</td><td>진보, 발전</td><td>36번</td></tr>
+      <tr><td class="word-en">proposition</td><td class="pos">명사</td><td>명제, 제안</td><td>36번</td></tr>
+      <tr><td class="word-en">prosocial</td><td class="pos">형용사</td><td>친사회적인</td><td>34번</td></tr>
+      <tr><td class="word-en">purpose</td><td class="pos">명사</td><td>목적</td><td>30번</td></tr>
+      <tr><td class="word-en">pursue</td><td class="pos">동사</td><td>추구하다</td><td>34번</td></tr>
+      <tr><td class="word-en">put off</td><td class="pos">동사구</td><td>미루다</td><td>24번</td></tr>
+      <tr><td class="word-en">reconsider</td><td class="pos">동사</td><td>재고하다, 다시 생각하다</td><td>26번</td></tr>
+      <tr><td class="word-en">research</td><td class="pos">명사</td><td>연구</td><td>24번</td></tr>
+      <tr><td class="word-en">responsibility</td><td class="pos">명사</td><td>책임</td><td>21번</td></tr>
+      <tr><td class="word-en">reverse</td><td class="pos">동사</td><td>뒤집다, 역전시키다</td><td>30번</td></tr>
+      <tr><td class="word-en">roughly</td><td class="pos">부사</td><td>대략</td><td>36번</td></tr>
+      <tr><td class="word-en">shade</td><td class="pos">명사</td><td>그늘</td><td>21번</td></tr>
+      <tr><td class="word-en">shift</td><td class="pos">명사</td><td>이동, 변화</td><td>36번</td></tr>
+      <tr><td class="word-en">simplify</td><td class="pos">동사</td><td>단순화하다</td><td>29번</td></tr>
+      <tr><td class="word-en">simulate</td><td class="pos">동사</td><td>모의실험하다, 가장하다</td><td>30번</td></tr>
+      <tr><td class="word-en">spare</td><td class="pos">동사</td><td>할애하다, 남기다</td><td>30번</td></tr>
+      <tr><td class="word-en">species</td><td class="pos">명사</td><td>종(種)</td><td>21번</td></tr>
+      <tr><td class="word-en">steal</td><td class="pos">동사</td><td>훔치다</td><td>21번</td></tr>
+      <tr><td class="word-en">stewardship</td><td class="pos">명사</td><td>관리, 책임감</td><td>21번</td></tr>
+      <tr><td class="word-en">strategy</td><td class="pos">명사</td><td>전략</td><td>34번</td></tr>
+      <tr><td class="word-en">subject matter</td><td class="pos">명사</td><td>주제, 소재</td><td>36번</td></tr>
+      <tr><td class="word-en">survive</td><td class="pos">동사</td><td>생존하다</td><td>24번</td></tr>
+      <tr><td class="word-en">temptation</td><td class="pos">명사</td><td>유혹</td><td>24번</td></tr>
+      <tr><td class="word-en">tempting</td><td class="pos">형용사</td><td>유혹적인</td><td>24번</td></tr>
+      <tr><td class="word-en">tendency</td><td class="pos">명사</td><td>경향</td><td>34번</td></tr>
+      <tr><td class="word-en">training</td><td class="pos">명사</td><td>훈련</td><td>26번</td></tr>
+      <tr><td class="word-en">trapped</td><td class="pos">과거분사</td><td>갇힌</td><td>21번</td></tr>
+      <tr><td class="word-en">treadmill</td><td class="pos">명사</td><td>러닝머신</td><td>30번</td></tr>
+      <tr><td class="word-en">two-thirds</td><td class="pos">명사</td><td>3분의 2</td><td>24번</td></tr>
+      <tr><td class="word-en">unavoidable</td><td class="pos">형용사</td><td>피할 수 없는</td><td>30번</td></tr>
+      <tr><td class="word-en">unprecedented</td><td class="pos">형용사</td><td>전례 없는</td><td>21번</td></tr>
+      <tr><td class="word-en">wellbeing</td><td class="pos">명사</td><td>안녕, 복지</td><td>21번</td></tr>
+      <tr><td class="word-en">worldwide</td><td class="pos">부사</td><td>전 세계적으로</td><td>26번</td></tr>
+    </table>
+  </div>
+</section>
+</main>
+
+<script>
+(function() {
+  // ── Theme Toggle ──
+  var html = document.documentElement;
+  var toggle = document.getElementById('themeToggle');
+
+  function getPreferredTheme() {
+    var saved = localStorage.getItem('grammar-theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    html.setAttribute('data-theme', theme);
+    toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    toggle.title = theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환';
+  }
+
+  applyTheme(getPreferredTheme());
+
+  toggle.addEventListener('click', function() {
+    var current = html.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('grammar-theme', next);
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('grammar-theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+
+  // ── Sidebar Navigation ──
+  var sidebar = document.getElementById('sidebar');
+  var overlay = document.getElementById('sidebarOverlay');
+  var menuBtn = document.getElementById('menuToggle');
+  var closeBtn = document.getElementById('sidebarClose');
+
+  function openSidebar() {
+    sidebar.classList.add('open');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  menuBtn.addEventListener('click', openSidebar);
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  sidebar.querySelectorAll('.sidebar-nav a').forEach(function(link) {
+    link.addEventListener('click', function() { closeSidebar(); });
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
+  });
+
+  // ── Sentence Search ──
+  var searchInput = document.getElementById('sentenceSearch');
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      var num = parseInt(this.value);
+      var targetId = null;
+      if (num === 21) targetId = 's1';
+      else if (num === 24) targetId = 's2';
+      else if (num === 26) targetId = 's3';
+      else if (num === 29) targetId = 's4';
+      else if (num === 30) targetId = 's5';
+      else if (num === 34) targetId = 's6';
+      else if (num === 36) targetId = 's7';
+      
+      if (targetId) {
+        var target = document.getElementById(targetId);
+        if (target) {
+          closeSidebar();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Flash highlight
+          target.style.outline = '3px solid var(--accent)';
+          target.style.outlineOffset = '4px';
+          setTimeout(function() {
+            target.style.outline = '';
+            target.style.outlineOffset = '';
+          }, 2000);
+        }
+      }
+      this.value = '';
+    }
+  });
+
+  // ── Auto-wrap tables for horizontal scroll ──
+  document.querySelectorAll('.analysis-table, .vocab-table').forEach(function(table) {
+    if (table.parentElement.classList.contains('table-scroll')) return;
+    var wrapper = document.createElement('div');
+    wrapper.className = 'table-scroll';
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+})();
+</script>
+
+</body>
+</html>
