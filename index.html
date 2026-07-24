@@ -180,8 +180,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 20px;
-    cursor: default;
-    user-select: none;
   }
   .legend-header h2 {
     font-size: 1em;
@@ -199,46 +197,49 @@
   .legend-body {
     padding: 0 20px 16px;
   }
-  .legend-body details {
-    border-top: 1px solid var(--border);
-    padding: 0;
-  }
-  .legend-body details + details {
+  .legend-section {
     border-top: 1px solid var(--border);
   }
-  .legend-body summary {
-    padding: 10px 4px;
+  .legend-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 12px 4px;
     font-size: 0.92em;
     font-weight: 700;
     color: var(--text);
     cursor: pointer;
-    list-style: none;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    text-align: left;
+    font-family: inherit;
     transition: color 0.2s;
   }
-  .legend-body summary:hover {
+  .legend-toggle:hover {
     color: var(--accent);
   }
-  .legend-body summary::before {
-    content: '▸';
+  .legend-toggle .arrow {
     display: inline-block;
-    transition: transform 0.2s;
-    font-size: 0.8em;
+    transition: transform 0.25s ease;
+    font-size: 0.75em;
     color: var(--accent);
   }
-  .legend-body details[open] > summary::before {
+  .legend-toggle[aria-expanded="true"] .arrow {
     transform: rotate(90deg);
   }
-  .legend-body summary::-webkit-details-marker { display: none; }
-  .legend-body .legend-grid-wrap {
-    padding: 6px 0 12px 18px;
-    animation: legendSlideIn 0.2s ease;
+  .legend-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+    max-height: 0;
+    opacity: 0;
   }
-  @keyframes legendSlideIn {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
+  .legend-content.open {
+    max-height: 500px;
+    opacity: 1;
+  }
+  .legend-content-inner {
+    padding: 4px 0 14px 16px;
   }
   .legend-grid {
     display: grid;
@@ -787,34 +788,44 @@
     <span class="legend-hint">▼ 클릭하여 펼치기/접기</span>
   </div>
   <div class="legend-body">
-    <details open>
-      <summary>1. 핵심 성분 (Core) — 문장의 뼈대</summary>
-      <div class="legend-grid-wrap">
-        <div class="legend-grid">
-          <div class="legend-item"><span class="legend-preview c-s">주어 (S)</span> <span class="legend-desc">~은/는/이/가</span></div>
-          <div class="legend-item"><span class="legend-preview c-v">동사 (V)</span> <span class="legend-desc">~하다, ~이다</span></div>
-          <div class="legend-item"><span class="legend-preview c-o">목적어 (O)</span> <span class="legend-desc">~을/를</span></div>
-          <div class="legend-item"><span class="legend-preview c-c">보어 (C)</span> <span class="legend-desc">상태/정체 설명</span></div>
-          <div class="legend-item"><span class="legend-preview c-io">간접목적어 (IO)</span> <span class="legend-desc">~에게</span></div>
-          <div class="legend-item"><span class="legend-preview c-do">직접목적어 (DO)</span> <span class="legend-desc">~을/를 (4형식)</span></div>
-          <div class="legend-item"><span class="legend-preview c-oc">목적격보어 (OC)</span> <span class="legend-desc">목적어 = OC</span></div>
+    <!-- 핵심 성분 -->
+    <div class="legend-section">
+      <button class="legend-toggle" aria-expanded="true" data-target="legend-core">
+        <span class="arrow">▶</span> 1. 핵심 성분 (Core) — 문장의 뼈대
+      </button>
+      <div class="legend-content open" id="legend-core">
+        <div class="legend-content-inner">
+          <div class="legend-grid">
+            <div class="legend-item"><span class="legend-preview c-s">주어 (S)</span> <span class="legend-desc">~은/는/이/가</span></div>
+            <div class="legend-item"><span class="legend-preview c-v">동사 (V)</span> <span class="legend-desc">~하다, ~이다</span></div>
+            <div class="legend-item"><span class="legend-preview c-o">목적어 (O)</span> <span class="legend-desc">~을/를</span></div>
+            <div class="legend-item"><span class="legend-preview c-c">보어 (C)</span> <span class="legend-desc">상태/정체 설명</span></div>
+            <div class="legend-item"><span class="legend-preview c-io">간접목적어 (IO)</span> <span class="legend-desc">~에게</span></div>
+            <div class="legend-item"><span class="legend-preview c-do">직접목적어 (DO)</span> <span class="legend-desc">~을/를 (4형식)</span></div>
+            <div class="legend-item"><span class="legend-preview c-oc">목적격보어 (OC)</span> <span class="legend-desc">목적어 = OC</span></div>
+          </div>
         </div>
       </div>
-    </details>
-    <details open>
-      <summary>2. 수식 성분 (Modifiers) — 문장을 풍성하게</summary>
-      <div class="legend-grid-wrap">
-        <div class="legend-grid">
-          <div class="legend-item"><span class="legend-preview m-adj-c">[형용사절]</span> <span class="legend-desc">명사 수식 (관계사절)</span></div>
-          <div class="legend-item"><span class="legend-preview m-adj-p">[형용사구]</span> <span class="legend-desc">명사 수식 (분사구, 전치사구)</span></div>
-          <div class="legend-item"><span class="legend-preview m-adv-c">&lt;부사절&gt;</span> <span class="legend-desc">동사/문장 수식 (when, while 등)</span></div>
-          <div class="legend-item"><span class="legend-preview m-adv-p">&lt;부사구&gt;</span> <span class="legend-desc">동사/문장 수식 (전치사구, to부정사)</span></div>
-          <div class="legend-item"><span class="legend-preview m-part">(분사구문)</span> <span class="legend-desc">주절 수식 (~하면서, ~하여)</span></div>
-          <div class="legend-item"><span class="legend-preview m-appos">=동격=</span> <span class="legend-desc">앞 명사 부연 설명</span></div>
-          <div class="legend-item"><span class="legend-preview conj">접속사</span> <span class="legend-desc">and, but, or, that 등</span></div>
+    </div>
+    <!-- 수식 성분 -->
+    <div class="legend-section">
+      <button class="legend-toggle" aria-expanded="true" data-target="legend-mod">
+        <span class="arrow">▶</span> 2. 수식 성분 (Modifiers) — 문장을 풍성하게
+      </button>
+      <div class="legend-content open" id="legend-mod">
+        <div class="legend-content-inner">
+          <div class="legend-grid">
+            <div class="legend-item"><span class="legend-preview m-adj-c">[형용사절]</span> <span class="legend-desc">명사 수식 (관계사절)</span></div>
+            <div class="legend-item"><span class="legend-preview m-adj-p">[형용사구]</span> <span class="legend-desc">명사 수식 (분사구, 전치사구)</span></div>
+            <div class="legend-item"><span class="legend-preview m-adv-c">&lt;부사절&gt;</span> <span class="legend-desc">동사/문장 수식 (when, while 등)</span></div>
+            <div class="legend-item"><span class="legend-preview m-adv-p">&lt;부사구&gt;</span> <span class="legend-desc">동사/문장 수식 (전치사구, to부정사)</span></div>
+            <div class="legend-item"><span class="legend-preview m-part">(분사구문)</span> <span class="legend-desc">주절 수식 (~하면서, ~하여)</span></div>
+            <div class="legend-item"><span class="legend-preview m-appos">=동격=</span> <span class="legend-desc">앞 명사 부연 설명</span></div>
+            <div class="legend-item"><span class="legend-preview conj">접속사</span> <span class="legend-desc">and, but, or, that 등</span></div>
+          </div>
         </div>
       </div>
-    </details>
+    </div>
   </div>
 </section>
 
@@ -2696,6 +2707,23 @@
     }, { threshold: [0] });
     obs.observe(sentinel);
   }
+
+  // ── Legend Toggle (Core / Modifier sections) ──
+  document.querySelectorAll('.legend-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var targetId = btn.getAttribute('data-target');
+      var content = document.getElementById(targetId);
+      if (!content) return;
+      var isOpen = content.classList.contains('open');
+      if (isOpen) {
+        content.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        content.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
 })();
 </script>
 
