@@ -2707,21 +2707,23 @@
     }, { threshold: [0] });
     obs.observe(sentinel);
   }
+})();
+</script>
 
-  // ── Legend Toggle (Core / Modifier sections) ──
-  document.querySelectorAll('.legend-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var targetId = btn.getAttribute('data-target');
+<!-- Legend Toggle - 독립 스크립트 (다른 JS 에러에 영향 안 받음) -->
+<script>
+(function() {
+  var btns = document.querySelectorAll('.legend-toggle');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var targetId = this.getAttribute('data-target');
       var content = document.getElementById(targetId);
       if (!content) return;
       var isOpen = content.classList.contains('open');
-      if (isOpen) {
-        content.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        content.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      content.classList.toggle('open', !isOpen);
+      this.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 })();
