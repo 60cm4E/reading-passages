@@ -189,13 +189,35 @@
     align-items: center;
     gap: 8px;
   }
-  .legend-header .legend-hint {
+  .legend-collapse-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
     font-size: 0.78em;
     color: var(--text-light);
-    opacity: 0.7;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .legend-collapse-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(96,165,250,0.08);
   }
   .legend-body {
     padding: 0 20px 16px;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+    max-height: 600px;
+    opacity: 1;
+  }
+  .legend.collapsed .legend-body {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .legend-section {
     border-top: 1px solid var(--border);
@@ -782,10 +804,10 @@
 <button class="menu-toggle" id="menuToggle" title="목차 열기" aria-label="메뉴 열기">☰</button>
 
 <main>
-<section class="legend" id="legendPanel">
+<section class="legend collapsed" id="legendPanel">
   <div class="legend-header">
     <h2><span>📌</span> 문장 성분 분석 기호</h2>
-    <span class="legend-hint">▼ 클릭하여 펼치기/접기</span>
+    <button class="legend-collapse-btn" id="legendCollapseBtn" aria-expanded="false">▼ 클릭하여 펼치기/접기</button>
   </div>
   <div class="legend-body">
     <!-- 핵심 성분 -->
@@ -2710,11 +2732,25 @@
 })();
 </script>
 
-<!-- Legend Toggle - 독립 스크립트 (다른 JS 에러에 영향 안 받음) -->
+<!-- Legend Toggle - 독립 스크립트 -->
 <script>
 (function() {
-  var btns = document.querySelectorAll('.legend-toggle');
-  btns.forEach(function(btn) {
+  // ── 마스터 접기/펼치기 (전체 범례 본문) ──
+  var collapseBtn = document.getElementById('legendCollapseBtn');
+  var legendPanel = document.getElementById('legendPanel');
+  if (collapseBtn && legendPanel) {
+    collapseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var isCollapsed = legendPanel.classList.contains('collapsed');
+      legendPanel.classList.toggle('collapsed', !isCollapsed);
+      this.setAttribute('aria-expanded', String(isCollapsed));
+      this.textContent = isCollapsed ? '▲ 접기' : '▼ 펼치기';
+    });
+  }
+
+  // ── 개별 섹션 접기/펼치기 (핵심/수식) ──
+  document.querySelectorAll('.legend-toggle').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
